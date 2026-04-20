@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Staafin — The modern HRMS for growing organisations. Simplify, centralise, and empower your workforce.">
+  <title>Staafin — Modern HRMS for Growing Teams</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Staafin" draggable="false">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/features.html">Features</a></li>
+        <li><a href="pages/pricing.html">Pricing</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-outline btn-sm">Log in</a>
+        <a href="#" class="btn btn-teal btn-sm">Start Free Trial</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/features.html">Features</a></li>
+      <li><a href="pages/pricing.html">Pricing</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <a href="#" class="btn btn-outline btn-full">Log in</a>
+      <a href="#" class="btn btn-teal btn-full">Start Free Trial</a>
+    </div>
+  </div>
+
+  <main class="page-content">
+
+    <!-- ══════════════════════════════════
+         HERO
+    ══════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+
+      <div class="hero-container">
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            Now with AI-powered resume parsing
+          </div>
+          <h1 class="reveal delay-1">
+            The modern<br>
+            <span class="highlight">HRMS</span> for<br>
+            <span class="highlight-teal">growing teams.</span>
+          </h1>
+          <p class="hero-sub reveal delay-2">
+            Simplify, centralise, and empower your workforce. Built by HR professionals, for HR teams who want enterprise precision with human warmth.
+          </p>
+          <div class="hero-actions reveal delay-3">
+            <a href="#" class="btn btn-teal btn-lg">Start Free Trial</a>
+            <a href="#" class="btn btn-ghost btn-lg">Book a Demo</a>
+          </div>
+          <div class="hero-social-proof reveal delay-4">
+            <div class="avatars">
+              <span>SJ</span><span>MC</span><span>ER</span><span>+</span>
+            </div>
+            <span>Trusted by innovative teams worldwide</span>
+          </div>
+        </div>
+
+        <!-- Right: Dashboard mockup -->
+        <div class="hero-visual reveal delay-2">
+          <div class="dashboard-mockup">
+            <div class="mock-topbar">
+              <div class="mock-dots">
+                <div class="mock-dot" style="background:#ff5f57"></div>
+                <div class="mock-dot" style="background:#ffbd2e"></div>
+                <div class="mock-dot" style="background:#28c840"></div>
+              </div>
+              <div class="mock-url">app.staafin.io/dashboard</div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-sidebar">
+                <div class="mock-logo-sm">staafin</div>
+                <div class="mock-nav-item active"><div class="mock-icon"></div>Dashboard</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Employees</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Attendance</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Leave</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Recruitment</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Assets</div>
+                <div class="mock-nav-item"><div class="mock-icon"></div>Reports</div>
+              </div>
+              <div class="mock-main">
+                <!-- Employee profile mini -->
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:8px;background:rgba(124,58,237,0.08);border-radius:8px;border:1px solid rgba(124,58,237,0.15);">
+                  <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;">GP</div>
+                  <div>
+                    <div style="font-size:0.72rem;font-weight:600;">Gary Patterson</div>
+                    <div style="font-size:0.6rem;color:#a1a1aa;">Product Manager · London</div>
+                  </div>
+                  <div style="margin-left:auto;display:flex;gap:4px;">
+                    <div style="width:50px;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;"></div>
+                    <div style="width:30px;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;"></div>
+                  </div>
+                </div>
+                <!-- Org chart mini -->
+                <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:8px;">
+                  <div style="background:rgba(124,58,237,0.2);border:1px solid rgba(124,58,237,0.3);border-radius:6px;padding:4px 10px;font-size:0.6rem;font-weight:600;color:#a78bfa;">VP People</div>
+                  <div style="width:1px;height:10px;background:rgba(255,255,255,0.1);"></div>
+                  <div style="display:flex;gap:6px;">
+                    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 8px;font-size:0.58rem;color:#a1a1aa;">HR Mgr</div>
+                    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 8px;font-size:0.58rem;color:#a1a1aa;">Recruiter</div>
+                    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 8px;font-size:0.58rem;color:#a1a1aa;">Payroll</div>
+                  </div>
+                </div>
+                <div class="mock-cards">
+                  <div class="mock-card">
+                    <div class="mock-card-num" style="background:linear-gradient(135deg,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-target="248" data-suffix="">248</div>
+                    <div class="mock-card-label">Employees</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-num" style="color:#2dd4bf;">94%</div>
+                    <div class="mock-card-label">Attendance</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-num" style="color:#f59e0b;">12</div>
+                    <div class="mock-card-label">Leave pending</div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-card-num" style="color:#ec4899;">7</div>
+                    <div class="mock-card-label">Open roles</div>
+                  </div>
+                </div>
+                <div class="mock-chart">
+                  <div class="mock-chart-title">ATTENDANCE THIS WEEK</div>
+                  <div class="mock-bars">
+                    <div class="mock-bar" style="height:65%;background:rgba(124,58,237,0.4);"></div>
+                    <div class="mock-bar" style="height:80%;background:rgba(124,58,237,0.5);"></div>
+                    <div class="mock-bar" style="height:72%;background:rgba(124,58,237,0.4);"></div>
+                    <div class="mock-bar" style="height:94%;background:linear-gradient(180deg,#7c3aed,#ec4899);"></div>
+                    <div class="mock-bar" style="height:88%;background:rgba(124,58,237,0.5);"></div>
+                    <div class="mock-bar" style="height:40%;background:rgba(124,58,237,0.2);"></div>
+                    <div class="mock-bar" style="height:30%;background:rgba(124,58,237,0.15);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         TRUSTED BY TICKER
+    ══════════════════════════════════ -->
+    <div class="ticker-section">
+      <p class="ticker-label">Trusted by innovative teams worldwide</p>
+      <div style="overflow:hidden;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);">
+        <div class="ticker-track">
+          <span class="ticker-item"><span class="ticker-dot"></span>TechGrowth</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Lumina</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>RetailPro</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Meridian Group</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>NovaTech</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>PinnacleCo</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Arcbridge</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Fluxify</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Orion Labs</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="ticker-item"><span class="ticker-dot"></span>TechGrowth</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Lumina</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>RetailPro</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Meridian Group</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>NovaTech</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>PinnacleCo</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Arcbridge</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Fluxify</span>
+          <span class="ticker-item"><span class="ticker-dot"></span>Orion Labs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         FEATURES OVERVIEW
+    ══════════════════════════════════ -->
+    <section class="section" style="background:var(--bg-primary);">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">A complete HR ecosystem</span>
+          <h2 class="section-title">Powerful modules that work<br>seamlessly together</h2>
+          <p class="section-subtitle">Giving you unprecedented visibility and control over your workforce.</p>
+        </div>
+
+        <div class="features-grid" style="margin-top:3.5rem;">
+          <div class="feature-card reveal">
+            <div class="feature-icon" style="background:rgba(124,58,237,0.12);">👥</div>
+            <h3>Employee Management</h3>
+            <p>Centralised employee profiles, self-onboarding, role-based access, and secure document management in one place.</p>
+            <div class="feature-tags">
+              <span class="tag">Self-service</span>
+              <span class="tag">Org chart</span>
+            </div>
+          </div>
+          <div class="feature-card reveal delay-1">
+            <div class="feature-icon" style="background:rgba(45,212,191,0.1);">📍</div>
+            <h3>Attendance Tracking</h3>
+            <p>Mobile, web, or biometric clock-in with real-time dashboards, multi-level approvals, and automated alerts.</p>
+            <div class="feature-tags">
+              <span class="tag tag-teal">GPS clock-in</span>
+              <span class="tag tag-teal">Real-time</span>
+            </div>
+          </div>
+          <div class="feature-card reveal delay-2">
+            <div class="feature-icon" style="background:rgba(236,72,153,0.1);">🏖️</div>
+            <h3>Leave Management</h3>
+            <p>Flexible leave policies, custom accruals, carry-forward rules, holiday calendars, and bulk approvals.</p>
+            <div class="feature-tags">
+              <span class="tag">Custom policies</span>
+              <span class="tag">Bulk approve</span>
+            </div>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon" style="background:rgba(245,158,11,0.1);">📦</div>
+            <h3>Asset Management</h3>
+            <p>QR-code asset tracking, lifecycle management, and automatic alerts for returns, maintenance, and warranty expiry.</p>
+            <div class="feature-tags">
+              <span class="tag">QR codes</span>
+              <span class="tag">Audit ready</span>
+            </div>
+          </div>
+          <div class="feature-card reveal delay-1">
+            <div class="feature-icon" style="background:rgba(45,212,191,0.1);">🎯</div>
+            <h3>Hiring & Recruitment</h3>
+            <p>AI-powered resume parsing, visual hiring pipeline, applicant tracking, and seamless onboarding transitions.</p>
+            <div class="feature-tags">
+              <span class="tag tag-teal">AI parsing</span>
+              <span class="tag tag-teal">ATS</span>
+            </div>
+          </div>
+          <div class="feature-card reveal delay-2">
+            <div class="feature-icon" style="background:rgba(124,58,237,0.12);">📊</div>
+            <h3>Reports & Insights</h3>
+            <p>Real-time dashboards, attendance analytics, workforce reports, and data-driven insights for smarter HR decisions.</p>
+            <div class="feature-tags">
+              <span class="tag">Live dashboards</span>
+              <span class="tag">Export ready</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;" class="reveal">
+          <a href="pages/features.html" class="btn btn-purple btn-lg">Explore all features</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         TESTIMONIALS
+    ══════════════════════════════════ -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Loved by HR professionals</span>
+          <h2 class="section-title">What our customers say</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <div class="t-quote">"</div>
+            <p class="t-text">Staafin transformed how we handle our growing team. The AI resume parsing alone saved us hundreds of hours this quarter.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background:rgba(124,58,237,0.2);color:#a78bfa;">SJ</div>
+              <div>
+                <div class="t-name">Sarah Jenkins</div>
+                <div class="t-role">VP of People, TechGrowth</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal delay-1">
+            <div class="t-quote">"</div>
+            <p class="t-text">Finally, an HRMS that doesn't feel like it was built in 2005. Our employees actually enjoy using the self-service portal.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background:rgba(45,212,191,0.15);color:#2dd4bf;">MC</div>
+              <div>
+                <div class="t-name">Marcus Chen</div>
+                <div class="t-role">Operations Director, Lumina</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal delay-2">
+            <div class="t-quote">"</div>
+            <p class="t-text">The shift planning feature combined with attendance tracking has completely eliminated our payroll discrepancies.</p>
+            <div class="t-author">
+              <div class="t-avatar" style="background:rgba(236,72,153,0.15);color:#ec4899;">ER</div>
+              <div>
+                <div class="t-name">Elena Rodriguez</div>
+                <div class="t-role">HR Manager, RetailPro</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         STATS
+    ══════════════════════════════════ -->
+    <section class="section" style="background:var(--bg-primary);">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;">
+          <div class="reveal">
+            <div style="font-size:2.8rem;font-weight:800;background:var(--grad-purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;">
+              <span data-target="50000" data-suffix="+">50,000+</span>
+            </div>
+            <div style="color:var(--text-secondary);font-size:0.9rem;">Employees managed</div>
+          </div>
+          <div class="reveal delay-1">
+            <div style="font-size:2.8rem;font-weight:800;background:var(--grad-teal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;">
+              <span data-target="99" data-suffix=".9%">99.9%</span>
+            </div>
+            <div style="color:var(--text-secondary);font-size:0.9rem;">Uptime guaranteed</div>
+          </div>
+          <div class="reveal delay-2">
+            <div style="font-size:2.8rem;font-weight:800;background:var(--grad-purple);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;">
+              <span data-target="500" data-suffix="+">500+</span>
+            </div>
+            <div style="color:var(--text-secondary);font-size:0.9rem;">Companies onboarded</div>
+          </div>
+          <div class="reveal delay-3">
+            <div style="font-size:2.8rem;font-weight:800;background:var(--grad-teal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;">
+              <span data-target="4" data-suffix=".8★">4.8★</span>
+            </div>
+            <div style="color:var(--text-secondary);font-size:0.9rem;">Average rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA
+    ══════════════════════════════════ -->
+    <section class="cta-section">
+      <div class="container container-sm">
+        <h2 class="reveal">Ready to transform<br>your HR?</h2>
+        <p class="reveal delay-1">Join thousands of forward-thinking companies that use Staafin to manage, engage, and grow their teams.</p>
+        <div class="cta-actions reveal delay-2">
+          <a href="#" class="btn btn-teal btn-lg">Start your 14-day free trial</a>
+          <a href="#" class="btn btn-ghost btn-lg">Talk to Sales</a>
+        </div>
+        <p class="cta-note reveal delay-3">No credit card required. Cancel anytime.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="Staafin">
+          </div>
+          <p>The modern HRMS built by HR professionals for growing organisations. Simplify, centralise, and empower your workforce.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="pages/features.html">Features</a>
+          <a href="pages/pricing.html">Pricing</a>
+          <a href="#">Integrations</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="pages/about.html">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+          <a href="pages/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Staafin. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="pages/contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
