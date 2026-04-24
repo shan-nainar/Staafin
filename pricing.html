@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing — Staafin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero {
+      background: var(--nav-bg);
+      padding: 148px 24px 88px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% -20%, rgba(91,71,224,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 90%, rgba(99,102,241,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(34,211,238,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #fff; letter-spacing: -0.04em; margin-bottom: 18px; line-height: 1.08; }
+    .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto; line-height: 1.78; }
+    .page-hero-label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.07);padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.1);}
+
+    /* Billing toggle */
+    .billing-toggle-wrap { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 40px 0 0; }
+    .toggle-label { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); }
+    .toggle-label.active { color: #fff; font-weight: 600; }
+    .toggle-track {
+      width: 48px; height: 26px; border-radius: 100px; background: rgba(255,255,255,0.15);
+      cursor: pointer; position: relative; transition: background .25s;
+    }
+    .toggle-track.annual { background: var(--green); }
+    .toggle-thumb {
+      position: absolute; top: 3px; left: 3px;
+      width: 20px; height: 20px; border-radius: 50%; background: #fff;
+      transition: transform .25s; box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .toggle-track.annual .toggle-thumb { transform: translateX(22px); }
+    .save-badge {
+      background: var(--green); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 100px; opacity: 0; transform: scale(0.8);
+      transition: opacity .2s, transform .2s;
+    }
+    .save-badge.visible { opacity: 1; transform: scale(1); }
+
+    .pricing-section { padding: 80px 24px; background: var(--bg-2); }
+    .pricing-grid { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+    .plan-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
+      padding: 36px; position: relative; transition: box-shadow .3s, border-color .3s, transform .3s;
+    }
+    .plan-card:hover { box-shadow: 0 12px 32px rgba(91,71,224,0.1); border-color: rgba(91,71,224,0.25); transform: translateY(-3px); }
+    .plan-card.featured { border-color: var(--purple); box-shadow: 0 8px 32px rgba(91,71,224,0.15); }
+    .plan-card.featured:hover { box-shadow: 0 16px 48px rgba(91,71,224,0.25); }
+    .badge-popular {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--purple); color: #fff; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.5px; padding: 4px 16px; border-radius: 100px; white-space: nowrap;
+    }
+    .plan-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+    .plan-name { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .plan-desc { font-size: 13.5px; color: var(--muted); }
+    .plan-price { display: flex; align-items: baseline; gap: 3px; margin-bottom: 28px; }
+    .plan-currency { font-size: 1.4rem; font-weight: 800; color: var(--text); align-self: flex-start; margin-top: 8px; }
+    .plan-amount { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); line-height: 1; }
+    .plan-period { font-size: 13px; color: var(--muted); align-self: flex-end; margin-bottom: 4px; padding-left: 2px; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
+    .plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2); }
+    .pf-check { width: 18px; height: 18px; border-radius: 50%; background: #DCFCE7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pf-check svg { width: 10px; height: 10px; }
+    .plan-btn {
+      display: block; text-align: center; padding: 13px;
+      font-size: 15px; font-weight: 700; border-radius: 10px; cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s, border-color .2s; border: none;
+    }
+    .plan-btn.outline {
+      background: transparent; border: 1.5px solid var(--border); color: var(--text-2);
+    }
+    .plan-btn.outline:hover { border-color: var(--purple); color: var(--purple); background: var(--purple-xl); }
+    .plan-btn.solid {
+      background: var(--purple); color: #fff; box-shadow: 0 4px 14px rgba(91,71,224,0.3);
+    }
+    .plan-btn.solid:hover { background: var(--purple-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,71,224,0.4); }
+
+    .enterprise-card { background: var(--nav-bg); border-color: rgba(255,255,255,0.08); }
+    .enterprise-card .plan-name { color: #fff; }
+    .enterprise-card .plan-desc { color: rgba(255,255,255,0.5); }
+    .enterprise-card .plan-amount { color: #fff; }
+    .enterprise-card .plan-currency { color: #fff; }
+    .enterprise-card .plan-period { color: rgba(255,255,255,0.45); }
+    .enterprise-card .plan-features li { color: rgba(255,255,255,0.8); }
+    .enterprise-card:hover { border-color: rgba(255,255,255,0.2); }
+    .enterprise-card .plan-btn.outline { border-color: rgba(255,255,255,0.25); color: #fff; }
+    .enterprise-card .plan-btn.outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* FAQ */
+    .faq-section { padding: 80px 24px; background: #fff; }
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+    .faq-section .section-header { margin-bottom: 48px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; background: none; border: none; padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer;
+      text-align: left; gap: 16px;
+    }
+    .faq-question:hover { color: var(--purple); }
+    .faq-icon { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: var(--bg-2); display: flex; align-items: center; justify-content: center; transition: background .2s, transform .3s; }
+    .faq-item.open .faq-icon { background: var(--purple-xl); transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
+    .faq-answer p { font-size: 14.5px; color: var(--muted); line-height: 1.75; padding-bottom: 20px; }
+
+    .custom-cta { background: var(--grad-cta); padding: 80px 24px; text-align: center; }
+    .custom-cta h2 { font-size: clamp(1.8rem, 3vw, 2.75rem); font-weight: 900; color: #fff; letter-spacing: -0.035em; margin-bottom: 14px; }
+    .custom-cta p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 440px; margin: 0 auto 32px; line-height: 1.75; }
+
+    @media (max-width: 600px) {
+      .plan-amount { font-size: 2.8rem; }
+      .pricing-section { padding: 56px 16px; }
+      .plan-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="20" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#lg1)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>
+      staafin
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 5.5h16M3 11h16M3 16.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="features.html" onclick="toggleNav()">Features</a>
+  <a href="pricing.html" onclick="toggleNav()">Pricing</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+  <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-label reveal">Pricing</div>
+  <h1 class="reveal d1">Simple, transparent pricing</h1>
+  <p class="reveal d2">Scale your HR operations without scaling your costs. Start free, upgrade as you grow.</p>
+  <!-- Billing toggle -->
+  <div class="billing-toggle-wrap reveal d2">
+    <span class="toggle-label active" id="lblMonthly">Monthly</span>
+    <div class="toggle-track" id="billingToggle" onclick="toggleBilling()">
+      <div class="toggle-thumb"></div>
+    </div>
+    <span class="toggle-label" id="lblAnnual">Annual</span>
+    <span class="save-badge" id="saveBadge">Save 20%</span>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="pricing-grid">
+
+    <!-- Free -->
+    <div class="plan-card reveal">
+      <div class="plan-header">
+        <div>
+          <div class="plan-name">Free Trial</div>
+          <div class="plan-desc">14-day full access. No credit card required.</div>
+        </div>
+      </div>
+      <div class="plan-price">
+        <span class="plan-currency">£</span>
+        <span class="plan-amount">0</span>
+      </div>
+      <ul class="plan-features">
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 50 employees</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic HR profiles</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Leave management</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Standard reports</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Email support</li>
+      </ul>
+      <a href="https://staafin.com/app/" class="plan-btn outline">Start Free Trial</a>
+    </div>
+
+    <!-- Starter -->
+    <div class="plan-card reveal d1">
+      <div class="plan-header">
+        <div>
+          <div class="plan-name">Starter</div>
+          <div class="plan-desc">Essential HR tools for small teams ready to grow.</div>
+        </div>
+      </div>
+      <div class="plan-price">
+        <span class="plan-currency">£</span>
+        <span class="plan-amount price-val" data-monthly="4" data-annual="3">4</span>
+        <span class="plan-period">/user/month</span>
+      </div>
+      <ul class="plan-features">
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 100 employees</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full employee profiles</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Attendance tracking</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Time-off management</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic asset tracking</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Priority email support</li>
+      </ul>
+      <a href="https://staafin.com/app/" class="plan-btn outline">Choose Starter</a>
+    </div>
+
+    <!-- Growth (featured) -->
+    <div class="plan-card featured reveal d2">
+      <div class="badge-popular">Most Popular</div>
+      <div class="plan-header">
+        <div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-desc">Advanced features to manage and scale your workforce.</div>
+        </div>
+      </div>
+      <div class="plan-price">
+        <span class="plan-currency">£</span>
+        <span class="plan-amount price-val" data-monthly="8" data-annual="6">8</span>
+        <span class="plan-period">/user/month</span>
+      </div>
+      <ul class="plan-features">
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Unlimited employees</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Hiring &amp; Recruitment (ATS)</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Shift &amp; Timesheet management</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced reporting &amp; analytics</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom approval workflows</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>24/7 priority support</li>
+      </ul>
+      <a href="https://staafin.com/app/" class="plan-btn solid">Choose Growth</a>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="plan-card enterprise-card reveal d3">
+      <div class="plan-header">
+        <div>
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-desc">Tailored solutions for large organisations.</div>
+        </div>
+      </div>
+      <div class="plan-price">
+        <span class="plan-amount" style="font-size:2.5rem;">Custom</span>
+      </div>
+      <ul class="plan-features">
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in Growth</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dedicated Customer Success Manager</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom integrations &amp; API access</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SAML Single Sign-On (SSO)</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Audit logs &amp; SLA guarantees</li>
+      </ul>
+      <a href="contact.html" class="plan-btn outline">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-header">
+      <span class="section-label reveal">FAQs</span>
+      <h2 class="reveal d1">Frequently asked questions</h2>
+    </div>
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I switch plans later?
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      </button>
+      <div class="faq-answer"><p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect from your next billing cycle.</p></div>
+    </div>
+    <div class="faq-item reveal d1">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is there a free trial?
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      </button>
+      <div class="faq-answer"><p>Absolutely. Every new account gets a 14-day free trial with full access to all features — no credit card required to start.</p></div>
+    </div>
+    <div class="faq-item reveal d2">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How does per-user pricing work?
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      </button>
+      <div class="faq-answer"><p>You pay only for the active employees in your organisation. Add or remove users at any time; your bill adjusts pro-rata.</p></div>
+    </div>
+    <div class="faq-item reveal d3">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What support is included?
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      </button>
+      <div class="faq-answer"><p>All plans include email support. Growth plan includes priority 24/7 support. Enterprise customers get a dedicated Customer Success Manager.</p></div>
+    </div>
+    <div class="faq-item reveal d4">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is my data secure?
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      </button>
+      <div class="faq-answer"><p>Yes. Staafin uses bank-grade encryption, regular security audits, and is fully GDPR compliant. Your data is yours — always.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM CTA -->
+<section class="custom-cta">
+  <h2 class="reveal">Have custom requirements?</h2>
+  <p class="reveal d1">We work with enterprise organisations to deliver tailored HRMS solutions. Let's discuss your specific needs.</p>
+  <a href="contact.html" class="btn-outline-white reveal d2">Contact Our Sales Team</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><svg width="26" height="19" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="flg" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#flg)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>staafin</div>
+        <p>The modern HRMS built by HR professionals for growing organisations. Simplify, centralise, and empower your workforce.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Integrations</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Staafin. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="contact.html">Contact Us</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.3)' : 'none'; });
+
+  // Billing toggle
+  let isAnnual = false;
+  function toggleBilling() {
+    isAnnual = !isAnnual;
+    const track = document.getElementById('billingToggle');
+    const badge = document.getElementById('saveBadge');
+    const lblM = document.getElementById('lblMonthly');
+    const lblA = document.getElementById('lblAnnual');
+    track.classList.toggle('annual', isAnnual);
+    badge.classList.toggle('visible', isAnnual);
+    lblM.classList.toggle('active', !isAnnual);
+    lblA.classList.toggle('active', isAnnual);
+    document.querySelectorAll('.price-val').forEach(el => {
+      const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+      el.style.transition = 'opacity .2s';
+      el.style.opacity = '0';
+      setTimeout(() => { el.textContent = val; el.style.opacity = '1'; }, 200);
+    });
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+</script>
+</body>
+</html>

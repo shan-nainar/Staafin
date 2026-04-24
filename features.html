@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features — Staafin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero{
+      background: var(--nav-bg);
+      padding: 148px 24px 88px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% -20%, rgba(99,102,241,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 15% 80%, rgba(91,71,224,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 85% 80%, rgba(34,211,238,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:#fff;letter-spacing:-0.04em;margin-bottom:18px;line-height:1.08;}
+    .page-hero p{font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto;line-height:1.78;}
+    .page-hero-label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.07);padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.1);}
+
+    .features-page{padding:72px 24px;}
+    .feat-block{max-width:1100px;margin:0 auto 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .feat-block.flip{direction:rtl;}
+    .feat-block.flip>*{direction:ltr;}
+    .feat-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--purple);background:var(--purple-xl);padding:5px 12px;border-radius:100px;margin-bottom:14px;}
+    .feat-block h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:14px;color:var(--text);}
+    .feat-block > div > p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+    .feat-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-2);line-height:1.55;}
+    .feat-list li .chk2{width:18px;height:18px;border-radius:50%;background:#DCFCE7;border:2px solid #86EFAC;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .feat-list li .chk2 svg{width:9px;height:9px;}
+    .feat-visual{background:var(--bg-2);border:1px solid var(--border);border-radius:18px;padding:28px;min-height:200px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-md);}
+    .vis-row{display:flex;align-items:center;gap:10px;}
+    .vis-icon{width:36px;height:36px;border-radius:9px;background:var(--purple-xl);color:var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .vis-icon svg{width:18px;height:18px;}
+    .vis-text{flex:1;}
+    .vis-label{font-size:11px;color:var(--muted);margin-bottom:2px;}
+    .vis-bar{height:7px;border-radius:100px;background:var(--border);overflow:hidden;}
+    .vis-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#6366F1,#A78BFA);}
+    .vis-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px;}
+    .vis-stat{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;}
+    .vs-num{font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(90deg,#6366F1,#A855C8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .vs-lbl{font-size:10px;color:var(--muted);margin-top:2px;}
+    .divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto 80px;}
+    .features-cta{background:linear-gradient(135deg,#5B47E0 0%,#4338CA 50%,#3B82F6 100%);padding:72px 24px;text-align:center;}
+    .features-cta h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;}
+    .features-cta p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:420px;margin:0 auto 28px;}
+    @media(max-width:900px){.feat-block{grid-template-columns:1fr;gap:36px;}.feat-block.flip{direction:ltr;}}
+    @media(max-width:600px){.features-page{padding:48px 16px;}.feat-block{margin-bottom:56px;}}
+  </style>
+</head>
+<body>
+<nav class="site-nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg width="28" height="20" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#lg1)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>staafin</a>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="features.html" class="active">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="nav-right">
+      <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 5.5h16M3 11h16M3 16.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="features.html" onclick="toggleNav()">Features</a>
+  <a href="pricing.html" onclick="toggleNav()">Pricing</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+  <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-label reveal">Platform Features</div>
+  <h1 class="reveal d1">Powerful features.<br/>Simple interface.</h1>
+  <p class="reveal d2">Explore the 7 modules that make Staafin the complete platform for modern, growing HR teams.</p>
+</section>
+
+<div class="features-page">
+
+  <!-- 1 Employee -->
+  <div class="feat-block reveal">
+    <div>
+      <div class="feat-tag">People Hub</div>
+      <h2>Employee &amp; Organisation Management</h2>
+      <p>A single source of truth for your entire workforce. Manage profiles, history, documents and org structure from one centralised platform.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Centralised employee profiles &amp; employment history</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Self-onboarding &amp; employee self-service portal</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Role-based access, permissions &amp; delegation</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Secure document &amp; file management</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dynamic org chart builder</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="vis-text"><div class="vis-label">Total Employees</div><div style="font-size:1.4rem;font-weight:800;color:#0F172A;">348</div></div></div>
+      <div class="vis-row"><div style="flex:1"><div class="vis-label">Onboarding completion</div><div class="vis-bar"><div class="vis-bar-fill" style="width:87%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">87%</span></div>
+      <div class="vis-row"><div style="flex:1"><div class="vis-label">Document compliance</div><div class="vis-bar"><div class="vis-bar-fill" style="width:94%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">94%</span></div>
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">12</div><div class="vs-lbl">New this month</div></div>
+        <div class="vis-stat"><div class="vs-num">5</div><div class="vs-lbl">Onboarding</div></div>
+        <div class="vis-stat"><div class="vs-num">3</div><div class="vs-lbl">Departments</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2 Attendance -->
+  <div class="feat-block flip reveal">
+    <div>
+      <div class="feat-tag">Presence Intelligence</div>
+      <h2>Attendance &amp; Workflow Management</h2>
+      <p>Know who's in, who's out, and who needs follow-up — in real time. Automated approval workflows eliminate back-and-forth.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile, web or biometric clock-in/out</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Real-time dashboards for HR &amp; managers</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Customisable multi-level approval workflows</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Automated alerts &amp; smart notifications</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="vis-text"><div class="vis-label">Today's Attendance</div><div style="font-size:1.4rem;font-weight:800;color:#0F172A;">96%</div></div></div>
+      <div class="vis-row"><div style="flex:1"><div class="vis-label">On time arrivals</div><div class="vis-bar"><div class="vis-bar-fill" style="width:96%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">96%</span></div>
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">334</div><div class="vs-lbl">Present</div></div>
+        <div class="vis-stat"><div class="vs-num">8</div><div class="vs-lbl">On Leave</div></div>
+        <div class="vis-stat"><div class="vs-num">6</div><div class="vs-lbl">Pending</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3 Leave -->
+  <div class="feat-block reveal">
+    <div>
+      <div class="feat-tag">Time-Off Engine</div>
+      <h2>Advanced Leave &amp; Time-Off Management</h2>
+      <p>Build leave policies your way. From accrual rules to holiday calendars — every detail is configurable without touching a spreadsheet.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Flexible leave policy &amp; workflow builder</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom accruals, carry-forward &amp; holiday calendars</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Live leave balance tracking &amp; reports</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Bulk approvals &amp; easy policy configuration</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div><div class="vis-text"><div class="vis-label">Leave Overview</div><div style="font-size:1rem;font-weight:700;color:#0F172A;">April 2026</div></div></div>
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">18</div><div class="vs-lbl">Avg days taken</div></div>
+        <div class="vis-stat"><div class="vs-num">7</div><div class="vs-lbl">Pending requests</div></div>
+        <div class="vis-stat"><div class="vs-num">4</div><div class="vs-lbl">Leave types</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4 Assets -->
+  <div class="feat-block flip reveal">
+    <div>
+      <div class="feat-tag">Asset Command</div>
+      <h2>Asset Management</h2>
+      <p>Track every laptop, phone, and piece of equipment across your organisation. Never lose visibility of company assets again.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Centralised asset tracking &amp; allocation</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Asset lifecycle management with audit readiness</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>QR-code-based asset identification</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Alerts for returns, maintenance &amp; warranty expiry</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">214</div><div class="vs-lbl">Total Assets</div></div>
+        <div class="vis-stat"><div class="vs-num">99%</div><div class="vs-lbl">Compliance</div></div>
+        <div class="vis-stat"><div class="vs-num">3</div><div class="vs-lbl">Due Returns</div></div>
+      </div>
+      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Asset allocation rate</div><div class="vis-bar"><div class="vis-bar-fill" style="width:91%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">91%</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5 Hiring -->
+  <div class="feat-block reveal">
+    <div>
+      <div class="feat-tag">Talent Acquisition</div>
+      <h2>Hiring &amp; Recruitment</h2>
+      <p>Replace email chaos with a visual hiring pipeline. AI parses CVs, ranks candidates, and helps you move the right people forward faster.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Visual hiring pipeline &amp; applicant tracking</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>AI-powered resume parsing &amp; candidate profiling</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Job boards, email templates &amp; bulk communication</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Seamless transition from hiring to onboarding</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">14</div><div class="vs-lbl">Open Roles</div></div>
+        <div class="vis-stat"><div class="vs-num">87</div><div class="vs-lbl">Applicants</div></div>
+        <div class="vis-stat"><div class="vs-num">6</div><div class="vs-lbl">Interviews</div></div>
+      </div>
+      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Pipeline conversion rate</div><div class="vis-bar"><div class="vis-bar-fill" style="width:68%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">68%</span></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6 Shifts -->
+  <div class="feat-block flip reveal">
+    <div>
+      <div class="feat-tag">Shift Orchestration</div>
+      <h2>Shift &amp; Timesheet Management</h2>
+      <p>Plan shifts intelligently. Auto-allocate based on availability, detect conflicts instantly, and generate timesheets automatically.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Flexible shifts: fixed, rotating &amp; custom</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Auto-allocation &amp; conflict detection</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Smart allocation based on availability</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Auto-filled timesheets from attendance data</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">28</div><div class="vs-lbl">Active Shifts</div></div>
+        <div class="vis-stat"><div class="vs-num">0</div><div class="vs-lbl">Conflicts</div></div>
+        <div class="vis-stat"><div class="vs-num">100%</div><div class="vs-lbl">Coverage</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7 Reports -->
+  <div class="feat-block reveal">
+    <div>
+      <div class="feat-tag">Workforce Intelligence</div>
+      <h2>Reports &amp; Insights</h2>
+      <p>Stop running on gut feel. Staafin surfaces real-time data so every decision — from headcount to compliance — is backed by facts.</p>
+      <ul class="feat-list">
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Real-time dashboards &amp; analytics</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Attendance, leave, workforce &amp; asset reports</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Data-driven insights to support HR decision-making</li>
+      </ul>
+    </div>
+    <div class="feat-visual">
+      <div class="vis-stat-row">
+        <div class="vis-stat"><div class="vs-num">96%</div><div class="vs-lbl">Attendance Rate</div></div>
+        <div class="vis-stat"><div class="vs-num">4.2h</div><div class="vs-lbl">Avg Overtime</div></div>
+        <div class="vis-stat"><div class="vs-num">18d</div><div class="vs-lbl">Avg Leave</div></div>
+      </div>
+      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Overall HR health score</div><div class="vis-bar"><div class="vis-bar-fill" style="width:92%;background:linear-gradient(90deg,#22C55E,#86EFAC);"></div></div></div><span style="font-size:12px;font-weight:700;color:#16A34A;margin-left:8px;">92%</span></div>
+    </div>
+  </div>
+
+</div>
+
+<section class="features-cta">
+  <h2 class="reveal">See it all in action</h2>
+  <p class="reveal d1">Start your free 14-day trial and explore every feature — no credit card needed.</p>
+  <a href="https://staafin.com/app/" class="btn-outline-white reveal d2">Start Free Trial</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><svg width="26" height="19" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="flg" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#flg)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>staafin</div>
+        <p>The modern HRMS built by HR professionals for growing organisations. Simplify, centralise, and empower your workforce.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Integrations</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Staafin. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="contact.html">Contact Us</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,0.25)':'none';});
+</script>
+</body>
+</html>

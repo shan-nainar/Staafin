@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Staafin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero{
+      background: var(--nav-bg);
+      padding: 148px 24px 88px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% -20%, rgba(129,140,248,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 20% 90%, rgba(91,71,224,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(232,121,160,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero h1{font-size:clamp(2.2rem,5vw,3.75rem);font-weight:900;color:#fff;letter-spacing:-0.04em;margin-bottom:18px;line-height:1.08;}
+    .page-hero p{font-size:1.1rem;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto;line-height:1.78;}
+    .page-hero-label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.07);padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.1);}
+    .about-section{max-width:840px;margin:0 auto;padding:72px 24px;}
+    .team-photo{width:100%;height:280px;border-radius:16px;object-fit:cover;background:linear-gradient(135deg,#312E81,#1E1B4B);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-size:14px;margin-bottom:56px;overflow:hidden;}
+    .team-photo-inner{width:100%;height:280px;border-radius:16px;background:linear-gradient(135deg,#312E81 0%,#4338CA 50%,#6366F1 100%);display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:24px;}
+    .team-av{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;}
+    .mission-block{margin-bottom:56px;}
+    .mission-block h2{font-size:1.6rem;font-weight:800;color:var(--text);margin-bottom:16px;letter-spacing:-0.02em;}
+    .mission-block p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:12px;}
+    .diff-card{background:var(--purple);border-radius:16px;padding:32px;margin-top:32px;}
+    .diff-card h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:20px;}
+    .diff-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+    .diff-item:last-child{margin-bottom:0;}
+    .diff-chk{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .diff-chk svg{width:10px;height:10px;}
+    .diff-item p{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;}
+    .values-section{padding:72px 24px;background:#F8FAFC;border-top:1px solid var(--border);}
+    .values-inner{max-width:640px;margin:0 auto;}
+    .values-inner h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;letter-spacing:-0.03em;text-align:center;margin-bottom:8px;}
+    .values-inner > p{text-align:center;color:var(--muted);margin-bottom:48px;}
+    .value-item{display:flex;align-items:flex-start;gap:20px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+    .value-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+    .value-num{width:40px;height:40px;border-radius:10px;background:var(--purple-xl);color:var(--purple);font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .value-item h3{font-size:1.05rem;font-weight:800;margin-bottom:6px;color:var(--text);}
+    .value-item p{font-size:14px;color:var(--muted);line-height:1.65;}
+    .about-cta{background:linear-gradient(135deg,#5B47E0 0%,#4338CA 50%,#3B82F6 100%);padding:72px 24px;text-align:center;}
+    .about-cta h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;}
+    .about-cta p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:400px;margin:0 auto 28px;}
+    .about-cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  </style>
+</head>
+<body>
+<nav class="site-nav" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><svg width="28" height="20" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#lg1)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>staafin</a>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="nav-right">
+      <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 5.5h16M3 11h16M3 16.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="features.html" onclick="toggleNav()">Features</a>
+  <a href="pricing.html" onclick="toggleNav()">Pricing</a>
+  <a href="about.html" onclick="toggleNav()">About</a>
+  <a href="contact.html" onclick="toggleNav()">Contact</a>
+  <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-label reveal">Our Story</div>
+  <h1 class="reveal d1">Built by HR professionals,<br/>for HR teams.</h1>
+  <p class="reveal d2">We got tired of clunky, sterile enterprise software that made our jobs harder. So we built Staafin to bring warmth, intelligence, and ease back to human resources.</p>
+</section>
+
+<div class="about-section">
+  <div class="team-photo-inner reveal">
+    <div class="team-av">S</div><div class="team-av">M</div><div class="team-av">E</div>
+    <div class="team-av">J</div><div class="team-av">A</div><div class="team-av">R</div>
+    <div class="team-av">P</div><div class="team-av">L</div>
+  </div>
+
+  <div class="mission-block reveal">
+    <h2>Our Mission</h2>
+    <p>To simplify and centralise HR operations for growing organisations, allowing HR teams to focus on what truly matters: their people.</p>
+    <p>We believe that software should adapt to how you work, not the other way around. Every feature in Staafin is designed with deep empathy for the daily realities of HR management.</p>
+    <div class="diff-card">
+      <h3>The Staafin Difference</h3>
+      <div class="diff-item"><div class="diff-chk"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Intuitive design that requires zero training.</p></div>
+      <div class="diff-item"><div class="diff-chk"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>All-in-one platform without the enterprise bloat.</p></div>
+      <div class="diff-item"><div class="diff-chk"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Built-in intelligence to automate repetitive tasks.</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="values-section">
+  <div class="values-inner">
+    <h2 class="reveal">Our Values</h2>
+    <p class="reveal d1">The principles that guide our product and our company.</p>
+    <div class="value-item reveal d1"><div class="value-num">1</div><div><h3>Human First</h3><p>We build tools for people, not just resources. Empathy drives our interface design and support.</p></div></div>
+    <div class="value-item reveal d2"><div class="value-num">2</div><div><h3>Relentless Simplicity</h3><p>Complex problems don't require complex interfaces. We distil HR processes down to their essence.</p></div></div>
+    <div class="value-item reveal d3"><div class="value-num">3</div><div><h3>Quiet Power</h3><p>Advanced capabilities like AI parsing run silently in the background, surfacing only when needed.</p></div></div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <h2 class="reveal">Join us on the journey</h2>
+  <p class="reveal d1">Experience HR software that actually cares about you.</p>
+  <div class="about-cta-btns reveal d2">
+    <a href="https://staafin.com/app/" class="btn-green-solid">Start Free Trial</a>
+    <a href="contact.html" class="btn-outline-white">Contact Us</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><svg width="26" height="19" viewBox="0 0 60 44" fill="none"><defs><linearGradient id="flg" x1="0" y1="0" x2="60" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#E879A0"/></linearGradient></defs><circle cx="18" cy="9" r="7" fill="#818CF8"/><circle cx="42" cy="9" r="7" fill="#E879A0"/><path d="M4 38C10 22 20 14 30 22C40 30 50 20 56 8" stroke="url(#flg)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>staafin</div>
+        <p>The modern HRMS built by HR professionals for growing organisations. Simplify, centralise, and empower your workforce.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#">Integrations</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Staafin. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="contact.html">Contact Us</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,0.25)':'none';});
+</script>
+</body>
+</html>
