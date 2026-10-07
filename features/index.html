@@ -319,7 +319,6 @@
   document.querySelectorAll('.tour-shot[data-img]').forEach(function(frame){
     var img = new Image();
     img.alt = frame.parentElement.querySelector('figcaption').textContent;
-    img.loading = 'lazy';
     img.onload = function(){ frame.innerHTML = ''; frame.appendChild(img); };
     img.src = frame.getAttribute('data-img');
   });
