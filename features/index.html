@@ -274,6 +274,62 @@
 
 </div>
 
+<!-- PRODUCT TOUR
+  To show real app screenshots, capture these three screens from the Staafin app and save them in the repo root as:
+    images/tour-dashboard.png   (home dashboard)
+    images/tour-shifts.png      (shift planner / rota)
+    images/tour-leave.png       (leave & attendance view)
+  The frames below automatically swap the placeholder for the image when the file exists. Recommended width: 1200px+, PNG. -->
+<style>
+  .tour-section{padding:80px 24px;background:var(--bg-2);border-top:1px solid var(--border);}
+  .tour-section .section-header{text-align:center;margin-bottom:48px;}
+  .tour-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tour-frame{margin:0;}
+  .tour-shot{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);}
+  .tour-placeholder{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px dashed var(--border);border-radius:14px;background:var(--bg);color:var(--muted);font-size:13.5px;font-weight:600;text-align:center;padding:16px;}
+  .tour-placeholder small{font-weight:400;font-size:12px;opacity:.8;}
+  .tour-shot img{display:block;width:100%;height:auto;}
+  .tour-frame figcaption{font-size:13px;font-weight:700;color:var(--text-2);margin-top:12px;text-align:center;}
+  @media (max-width:900px){.tour-grid{grid-template-columns:1fr;max-width:520px;}}
+</style>
+<section class="tour-section" id="tour">
+  <div class="section-header">
+    <span class="section-label reveal">Product Tour</span>
+    <h2 class="reveal d1">Inside Staafin</h2>
+    <p class="reveal d2" style="color:var(--muted);max-width:520px;margin:12px auto 0;line-height:1.7;">Real screens from the platform — the dashboard your managers open each morning, the rota they plan cover on, and the leave view that keeps balances honest.</p>
+  </div>
+  <div class="tour-grid">
+    <figure class="tour-frame reveal">
+      <div class="tour-shot" data-img="/images/tour-dashboard.png">
+        <div class="tour-placeholder">Dashboard screenshot<small>add /images/tour-dashboard.png</small></div>
+      </div>
+      <figcaption>Workforce dashboard</figcaption>
+    </figure>
+    <figure class="tour-frame reveal d1">
+      <div class="tour-shot" data-img="/images/tour-shifts.png">
+        <div class="tour-placeholder">Shift planner screenshot<small>add /images/tour-shifts.png</small></div>
+      </div>
+      <figcaption>Shifts &amp; rota planning</figcaption>
+    </figure>
+    <figure class="tour-frame reveal d2">
+      <div class="tour-shot" data-img="/images/tour-leave.png">
+        <div class="tour-placeholder">Leave view screenshot<small>add /images/tour-leave.png</small></div>
+      </div>
+      <figcaption>Leave &amp; attendance</figcaption>
+    </figure>
+  </div>
+</section>
+<script>
+  // Swap tour placeholders for real screenshots when the image files exist
+  document.querySelectorAll('.tour-shot[data-img]').forEach(function(frame){
+    var img = new Image();
+    img.alt = frame.parentElement.querySelector('figcaption').textContent;
+    img.loading = 'lazy';
+    img.onload = function(){ frame.innerHTML = ''; frame.appendChild(img); };
+    img.src = frame.getAttribute('data-img');
+  });
+</script>
+
 <section class="features-cta">
   <h2 class="reveal">See it all in action</h2>
   <p class="reveal d1">Start your free 14-day trial and explore every feature — no credit card needed.</p>
@@ -291,7 +347,7 @@
 </div>
       <div class="footer-col"><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Book a demo</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>

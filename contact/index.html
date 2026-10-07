@@ -224,6 +224,30 @@
   </div>
 </div>
 
+<!-- BOOK A WALKTHROUGH -->
+<style>
+  .booking-section{background:linear-gradient(135deg,#0F172A 0%,#1E1B4B 60%,#312E81 100%);padding:72px 24px;text-align:center;}
+  .booking-section h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;}
+  .booking-section>p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:460px;margin:0 auto 28px;line-height:1.7;}
+  .booking-alt{font-size:13px;color:rgba(255,255,255,0.55);margin-top:16px;}
+  .booking-alt a{color:rgba(255,255,255,0.85);font-weight:600;}
+</style>
+<section class="booking-section">
+  <h2 class="reveal">Book a walkthrough</h2>
+  <p class="reveal d1">Prefer a guided tour? Book a 30-minute walkthrough and we'll show you Staafin using your own branches, shift patterns and leave policies as the example.</p>
+  <a href="mailto:connect@staafin.co.uk?subject=Book a Staafin walkthrough" id="bookingLink" class="btn-outline-white reveal d2">Book a time that suits you</a>
+  <p class="booking-alt reveal d3">or email <a href="mailto:connect@staafin.co.uk">connect@staafin.co.uk</a> — we respond within one business day</p>
+</section>
+<script>
+  // To enable online booking, paste your Calendly (or similar) scheduling link below, e.g.:
+  // const BOOKING_URL = 'https://calendly.com/your-team/staafin-walkthrough';
+  const BOOKING_URL = '';
+  if (BOOKING_URL) {
+    const link = document.getElementById('bookingLink');
+    link.href = BOOKING_URL; link.target = '_blank'; link.rel = 'noopener';
+  }
+</script>
+
 <!-- BOTTOM CTA -->
 <section class="contact-cta">
   <h2 class="reveal">Prefer to dive straight in?</h2>
@@ -243,7 +267,7 @@
 </div>
       <div class="footer-col"><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Book a demo</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>
