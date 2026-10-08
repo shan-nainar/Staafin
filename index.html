@@ -3,258 +3,930 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Staafin — The modern HRMS for growing teams</title>
-  <meta name="description" content="Simplify, centralise, and empower your workforce. Built by HR professionals for HR teams who want enterprise precision with human warmth."/>
+  <title>Staafin | Workforce Operations, Beautifully Organised</title>
+  <meta name="description" content="Staafin helps UK care providers, staffing teams and operational SMEs manage employee records, shifts, attendance, leave, assets, timesheets and workforce reporting from one connected HRMS platform."/>
+  <link rel="canonical" href="https://staafin.co.uk/"/>
+  <meta property="og:title" content="Staafin | HRMS & Workforce Management Software"/>
+  <meta property="og:description" content="A connected HRMS for UK care providers, staffing teams and operational SMEs."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://staafin.co.uk/"/>
+  <meta property="og:image" content="https://staafin.co.uk/og-preview.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://staafin.co.uk/og-preview.jpg"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="canonical" href="https://staafin.co.uk/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Staafin"/>
-  <meta property="og:title" content="Staafin — The modern HRMS for growing teams"/>
-  <meta property="og:description" content="Simplify, centralise, and empower your workforce. Employee records, leave, attendance, shifts, timesheets, assets and reporting in one connected platform, built by Elite Care and Support Ltd."/>
-  <meta property="og:url" content="https://staafin.co.uk/"/>
-  <meta property="og:image" content="https://staafin.co.uk/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Staafin — The modern HRMS for growing teams"/>
-  <meta name="twitter:description" content="Simplify, centralise, and empower your workforce. One connected HRMS, built by Elite Care and Support Ltd."/>
-  <meta name="twitter:image" content="https://staafin.co.uk/og-image.jpg"/>
-  <style>
-    /* ===== HERO ===== */
-    .hero {
-      padding: 148px 24px 0;
-      text-align: center;
-      background: #fff;
-      overflow: hidden;
-      position: relative;
-      min-height: 92vh;
-      display: flex; flex-direction: column;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Staafin",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://staafin.co.uk/",
+    "description": "HRMS and workforce management software for employee records, shifts, attendance, leave, recruitment, assets and reporting.",
+    "areaServed": { "@type": "Country", "name": "United Kingdom" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Staafin",
+      "url": "https://staafin.co.uk/",
+      "logo": "https://staafin.co.uk/logo.png"
     }
-    /* Multi-layer vivid gradient background */
+  }
+  </script>
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+  <style>
+    :root {
+      --navy: #000000;
+      --navy-2: #111111;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --line: #E2E8F0;
+      --soft: #F8FAFC;
+      --brand: #5B47E0;
+      --brand-dark: #4936CC;
+      --brand-soft: #EEF0FF;
+      --indigo: #4338CA;
+      --cyan: #06B6D4;
+      --green: #22C55E;
+      --green-dark: #16A34A;
+    }
+
+    body { background: #fff; }
+    .home-main { background: #fff; color: var(--ink); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      color: var(--ink);
+      padding: 124px 24px 102px;
+    }
     .hero::before {
-      content: ''; position: absolute; inset: 0; z-index: 0;
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
         radial-gradient(ellipse 80% 60% at 50% -10%, rgba(134,239,172,0.28) 0%, transparent 60%),
         radial-gradient(ellipse 60% 50% at 20% 40%, rgba(147,197,253,0.22) 0%, transparent 55%),
         radial-gradient(ellipse 60% 50% at 80% 35%, rgba(196,181,253,0.20) 0%, transparent 55%),
         radial-gradient(ellipse 100% 80% at 50% 0%, rgba(224,231,255,0.35) 0%, transparent 70%);
     }
-    .hero-glow {
-      position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
-      width: 1100px; height: 700px;
-      background: radial-gradient(ellipse at 50% 20%,
-        rgba(99,102,241,0.13) 0%,
-        rgba(34,211,238,0.10) 35%,
-        rgba(134,239,172,0.08) 60%,
-        transparent 75%);
-      pointer-events: none; border-radius: 50%; z-index: 0;
-    }
-    .hero-content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(91,71,224,0.08); color: var(--purple);
-      font-size: 13px; font-weight: 600; padding: 7px 16px;
-      border-radius: 100px; margin: 0 auto 32px;
-      border: 1px solid rgba(91,71,224,0.18);
-      backdrop-filter: blur(4px);
-    }
-    .hero-eyebrow .dot-live { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; animation: pulse-dot 2s ease-in-out infinite; }
-    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.5;transform:scale(1.4);} }
-    .hero h1 {
-      font-size: clamp(3.2rem, 6.5vw, 5.75rem);
-      font-weight: 900; line-height: 1.04;
-      letter-spacing: -0.045em; color: var(--text);
-      max-width: 900px; margin: 0 auto 24px;
-    }
-    .hero h1 .grad-line {
-      display: block;
-      background: linear-gradient(90deg, #6366F1 0%, #22D3EE 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero p {
-      font-size: 1.15rem; color: #475569;
-      max-width: 560px; margin: 0 auto 44px; line-height: 1.78;
-    }
-    .hero-btns { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
-    .hero-btns .btn-primary { font-size: 16px; padding: 15px 32px; }
-    .hero-btns .btn-outline { font-size: 16px; padding: 14px 32px; }
-
-    /* Dashboard mockup */
-    .dash-wrap {
-      max-width: 980px; margin: 0 auto;
-      background: #1A1733;
-      border-radius: 20px 20px 0 0;
-      padding: 18px 18px 0;
-      box-shadow: 0 -24px 100px rgba(99,102,241,0.28), 0 -4px 40px rgba(34,211,238,0.1), 0 0 0 1px rgba(255,255,255,0.06);
-      overflow: hidden;
-    }
-    .dash-chrome { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
-    .dot { width: 11px; height: 11px; border-radius: 50%; }
-    .dot.r{background:#FF5F57;} .dot.y{background:#FFBD2E;} .dot.g{background:#28C940;}
-    .dash-url {
-      flex: 1; background: rgba(255,255,255,0.07); border-radius: 6px;
-      padding: 5px 12px; font-size: 12px; color: rgba(255,255,255,0.4);
-    }
-    .dash-screen {
-      background: #0F0E1A; border-radius: 12px 12px 0 0; padding: 24px;
-      min-height: 260px; position: relative; overflow: hidden;
-    }
-    .dash-cards { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .float-card {
-      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px; padding: 18px 22px; min-width: 168px;
-      transition: background .2s, transform .2s;
-    }
-    .float-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
-    .float-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 8px; letter-spacing: 0.3px; }
-    .float-value { font-size: 2.2rem; font-weight: 800; color: #FB923C; letter-spacing: -0.04em; line-height: 1; }
-    .float-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 6px; }
-    .dash-bars { display: flex; align-items: flex-end; gap: 5px; height: 60px; margin-top: 20px; }
-    .dbar { flex: 1; border-radius: 4px 4px 0 0; background: rgba(99,102,241,0.35); transition: height .6s ease; }
-    .dbar.hi { background: linear-gradient(to top,#6366F1,#A78BFA); }
-
-    /* ===== LOGOS ===== */
-    .logos-section { padding: 40px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: #fff; }
-    .logos-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 28px; }
-    .logos-row { display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: wrap; }
-    .logo-pill { display: flex; align-items: center; gap: 8px; color: #94A3B8; font-weight: 700; font-size: 15px; transition: color .2s; }
-    .logo-pill:hover { color: #64748B; }
-    .logo-pill svg { width: 20px; height: 20px; opacity: 0.45; }
-
-    /* ===== STATS STRIP ===== */
-    .stats-strip { background: var(--purple); padding: 60px 24px; }
-    .stats-inner { max-width: 520px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; text-align: center; }
-    .stat-item {}
-    .stat-num { font-size: 2.75rem; font-weight: 900; color: #fff; letter-spacing: -0.04em; line-height: 1; }
-    .stat-suffix { font-size: 1.6rem; font-weight: 900; }
-    .stat-label { font-size: 14px; color: rgba(255,255,255,0.65); margin-top: 8px; font-weight: 500; }
-
-    /* ===== FEATURES SPLIT ===== */
-    .features-split-section { padding: 112px 24px; }
-    .features-split { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .split-text h2 { font-size: clamp(1.9rem, 3.2vw, 3rem); font-weight: 900; letter-spacing: -0.035em; line-height: 1.12; margin-bottom: 18px; color: var(--text); }
-    .split-text > p { font-size: 1rem; color: var(--muted); line-height: 1.78; margin-bottom: 32px; }
-    .check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-    .check-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: var(--text-2); }
-    .chk { width: 22px; height: 22px; border-radius: 50%; background: #DCFCE7; border: 2px solid #86EFAC; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .chk svg { width: 11px; height: 11px; }
-    .explore-link { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: var(--purple); transition: gap .2s; }
-    .explore-link:hover { gap: 11px; }
-    /* Device mockup */
-    .ipad-wrap {
-      background: #1E1B4B; border-radius: 22px; padding: 14px;
-      box-shadow: 0 28px 72px rgba(30,27,75,0.28), 0 0 0 1px rgba(99,102,241,0.15);
-      transition: transform .3s;
-    }
-    .ipad-wrap:hover { transform: translateY(-6px); }
-    .ipad-screen { background: #fff; border-radius: 12px; overflow: hidden; padding: 22px; }
-    .emp-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #F1F5F9; }
-    .emp-av { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg,#6366F1,#A78BFA); display: flex; align-items: center; justify-content: center; color:#fff; font-weight:700; font-size:16px; flex-shrink:0; }
-    .emp-nm { font-size: 15px; font-weight: 700; color: #0F172A; }
-    .emp-rl { font-size: 12px; color: #64748B; margin-top: 1px; }
-    .emp-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-    .emp-meta-item { display: flex; align-items: flex-start; gap: 8px; }
-    .meta-icon { color: var(--purple); margin-top: 1px; flex-shrink:0; }
-    .meta-lbl { font-size: 10px; color: #94A3B8; margin-bottom: 1px; }
-    .meta-val { font-size: 12px; font-weight: 600; color: #1E293B; }
-    .org-section { border-top: 1px solid #F1F5F9; padding-top: 14px; }
-    .org-heading { font-size: 11px; font-weight: 600; color: #64748B; text-align: center; margin-bottom: 12px; }
-    .org-ceo { background: #1E1B4B; color: #fff; font-size: 11px; font-weight: 700; text-align: center; padding: 6px 18px; border-radius: 6px; display: flex; justify-content: center; width: fit-content; margin: 0 auto 8px; }
-    .org-line-v { width: 1px; height: 14px; background: #E2E8F0; margin: 0 auto 8px; }
-    .org-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
-    .org-chip { background: #EEF2FF; color: #4F46E5; font-size: 10px; font-weight: 600; padding: 5px 10px; border-radius: 6px; }
-
-    /* ===== MODULES ===== */
-    .modules-section { background: #F8FAFC; padding: 112px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .section-header { text-align: center; margin-bottom: 60px; }
-    .section-header h2 { font-size: clamp(1.9rem, 3.2vw, 2.75rem); font-weight: 900; letter-spacing: -0.035em; color: var(--text); margin-bottom: 16px; }
-    .section-header p { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.75; }
-    .modules-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .module-card {
-      background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
-      padding: 32px 28px; transition: box-shadow .3s, transform .3s, border-color .3s;
-      cursor: default;
-    }
-    .module-card:hover { box-shadow: 0 12px 32px rgba(99,102,241,0.12); transform: translateY(-5px); border-color: rgba(99,102,241,0.25); }
-    .mod-icon { width: 48px; height: 48px; border-radius: 12px; background: #EEF0FF; display: flex; align-items: center; justify-content: center; color: var(--purple); margin-bottom: 20px; }
-    .mod-icon svg { width: 24px; height: 24px; }
-    .module-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-    .module-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-    /* ===== TESTIMONIALS ===== */
-    .testi-section { padding: 112px 24px; background: #fff; }
-    .testi-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .testi-card {
-      background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
-      padding: 32px 28px; transition: box-shadow .3s, transform .3s, border-color .3s;
-    }
-    .testi-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.08); transform: translateY(-5px); border-color: rgba(99,102,241,0.2); }
-    .testi-stars { display: flex; gap: 3px; margin-bottom: 18px; }
-    .testi-stars span { color: #F59E0B; font-size: 15px; }
-    .testi-text { font-size: 14.5px; color: var(--text-2); line-height: 1.78; margin-bottom: 24px; font-style: italic; }
-    .testi-author { display: flex; align-items: center; gap: 12px; }
-    .testi-av { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .testi-name { font-size: 14px; font-weight: 700; color: var(--text); }
-    .testi-role { font-size: 12.5px; color: var(--muted); margin-top: 1px; }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: var(--grad-cta);
-      padding: 112px 24px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.07) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 50%, rgba(99,102,241,0.2) 0%, transparent 60%);
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      width: 1100px;
+      height: 700px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 20%, rgba(99,102,241,0.13) 0%, rgba(34,211,238,0.10) 35%, rgba(134,239,172,0.08) 60%, transparent 75%);
       pointer-events: none;
     }
-    .cta-section > div { position: relative; z-index: 1; }
-    .cta-section h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); font-weight: 900; letter-spacing: -0.035em; color: #fff; margin-bottom: 18px; }
-    .cta-section > div > p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 40px; line-height: 1.75; }
-    .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .cta-note { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 18px; }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(360px,.82fr) minmax(560px,1.18fr);
+      gap: 74px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(91,71,224,.18);
+      background: rgba(91,71,224,.08);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+    .hero h1 {
+      max-width: 600px;
+      margin: 24px 0 20px;
+      font-size: clamp(3rem, 4.25vw, 4.35rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+    .hero-lead {
+      max-width: 620px;
+      color: #475569;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+    .hero-actions,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn-primary,
+    .btn-secondary,
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 18px 42px rgba(91,71,224,.25);
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.74);
+    }
+    .btn-secondary:hover { border-color: rgba(91,71,224,.36); background: #fff; color: var(--brand); transform: translateY(-2px); }
+    .btn-dark { color: #fff; background: var(--navy); }
+    .btn-dark:hover { background: var(--navy-2); transform: translateY(-2px); }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+      max-width: 630px;
+    }
+    .hero-tags span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 34px;
+      border: 1px solid rgba(91,71,224,.16);
+      background: rgba(91,71,224,.055);
+      border-radius: 999px;
+      color: #475569;
+      padding: 7px 12px;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+    .hero-tags span::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+    .product-shell {
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: 0 42px 110px rgba(0,0,0,.42);
+      transform: translateX(24px);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .product-shell:hover {
+      transform: translateX(24px) translateY(-6px);
+      box-shadow: 0 52px 130px rgba(0,0,0,.48);
+    }
+    .product-frame {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #0A1020;
+    }
+    .frame-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 14px;
+      background: #111A2B;
+      color: rgba(255,255,255,.48);
+      font-size: 12px;
+    }
+    .frame-dot { width: 10px; height: 10px; border-radius: 50%; background: #344055; }
+    .frame-address {
+      margin-left: 8px;
+      flex: 1;
+      background: rgba(255,255,255,.06);
+      border-radius: 8px;
+      padding: 7px 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .product-frame img {
+      width: 100%;
+      aspect-ratio: 16 / 8.8;
+      object-fit: cover;
+      object-position: left top;
+      filter: contrast(1.04) saturate(1.02);
+      background: #fff;
+    }
+    .product-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 16px;
+      background: #fff;
+      color: #344054;
+      border-top: 1px solid #E5EAF0;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+    .product-caption span {
+      color: var(--muted);
+      font-weight: 700;
+    }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .features-split { grid-template-columns: 1fr; gap: 52px; }
-      .modules-grid { grid-template-columns: repeat(2, 1fr); }
-      .testi-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .trust-ribbon {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: 24px;
     }
-    @media (max-width: 640px) {
-      .hero { padding: 112px 20px 0; min-height: auto; }
-      .modules-grid { grid-template-columns: 1fr; }
-      .dash-cards { gap: 10px; }
-      .float-card { min-width: 130px; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .stat-num { font-size: 2.2rem; }
-      .hero h1 { font-size: clamp(2.6rem, 8vw, 3.5rem); }
+    .trust-ribbon-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
     }
-    @media (max-width: 480px) {
-      .logos-row { gap: 20px; }
-      .stats-inner { grid-template-columns: 1fr 1fr; }
+    .trust-ribbon p {
+      color: #344054;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+    .trust-ribbon span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      margin-right: 16px;
+    }
+
+    .credibility-section {
+      background: #fff;
+      padding: 76px 24px 88px;
+      border-bottom: 1px solid var(--line);
+    }
+    .credibility-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(320px, .9fr) minmax(520px, 1.1fr);
+      gap: 54px;
+      align-items: center;
+    }
+    .credibility-copy h2 {
+      color: var(--ink);
+      font-size: clamp(2rem, 3.3vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 850;
+      margin: 0 0 18px;
+    }
+    .credibility-copy p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .credibility-list {
+      display: grid;
+      gap: 12px;
+    }
+    .credibility-list span {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .credibility-list span::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--brand);
+      margin-top: 7px;
+      flex: 0 0 auto;
+      box-shadow: 0 0 0 5px rgba(91,71,224,.1);
+    }
+    .proof-panel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .proof-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #F9FBFE);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 18px 52px rgba(15,23,42,.06);
+      min-height: 190px;
+    }
+    .proof-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .proof-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .proof-card.accent {
+      background: #0F0E1A;
+      color: #fff;
+      border-color: rgba(255,255,255,.08);
+    }
+    .proof-card.accent strong {
+      color: #fff;
+    }
+    .proof-card.accent p {
+      color: rgba(255,255,255,.66);
+    }
+    .proof-card .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .proof-card .text-link span {
+      transition: transform .2s ease;
+    }
+    .proof-card .text-link:hover span {
+      transform: translateX(4px);
+    }
+    .proof-mini {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .proof-mini span {
+      display: inline-flex;
+      border: 1px solid rgba(91,71,224,.2);
+      background: rgba(91,71,224,.08);
+      color: var(--brand);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .clarity-section {
+      background: #fff;
+      padding: 84px 24px;
+      overflow: hidden;
+    }
+    .clarity-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .clarity-lead {
+      max-width: 760px;
+      font-size: clamp(2.15rem, 3.5vw, 3.65rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 850;
+      color: var(--ink);
+    }
+    .clarity-lead span { color: var(--brand); }
+    .clarity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 44px;
+    }
+    .clarity-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #F9FBFE);
+      padding: 28px;
+      min-height: 230px;
+      box-shadow: 0 18px 52px rgba(15,23,42,.06);
+    }
+    .clarity-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.25rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .clarity-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .section { padding: 92px 24px; }
+    .section-soft {
+      background: var(--soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-head { max-width: 740px; margin-bottom: 42px; }
+    .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+    .kicker {
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+    .section h2 {
+      color: var(--ink);
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(15,23,42,.04);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #C6D3E1;
+      box-shadow: 0 18px 46px rgba(15,23,42,.08);
+    }
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+    .card:nth-child(2n) .icon { background: #ECFEFF; color: #0891B2; }
+    .card:nth-child(3n) .icon { background: #F0FDF4; color: var(--green-dark); }
+    .card h3 {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .showcase-list { display: grid; gap: 12px; }
+    .showcase-item {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px;
+      cursor: pointer;
+      transition: border-color .18s, transform .18s, box-shadow .18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .showcase-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      bottom: 14px;
+      width: 3px;
+      border-radius: 99px;
+      background: transparent;
+      transition: background .18s ease;
+    }
+    .showcase-item:hover,
+    .showcase-item.active {
+      border-color: rgba(18,168,118,.46);
+      box-shadow: 0 14px 34px rgba(15,23,42,.07);
+      transform: translateY(-2px);
+    }
+    .showcase-item.active::before { background: var(--brand); }
+    .showcase-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .showcase-item span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .showcase-screen {
+      position: sticky;
+      top: 92px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 26px 80px rgba(15,23,42,.12);
+    }
+    .showcase-screen img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: left top;
+      transition: opacity .22s ease, transform .45s ease;
+    }
+    .showcase-screen:hover img { transform: scale(1.018); }
+    .showcase-note {
+      padding: 16px 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .motion-story {
+      background: #fff;
+      padding: 96px 24px;
+    }
+    .motion-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .motion-copy h2 {
+      color: var(--ink);
+      font-size: clamp(2rem, 3.2vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 850;
+      margin: 12px 0 16px;
+    }
+    .motion-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 520px;
+    }
+    .motion-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .motion-points span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .motion-points span::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex: 0 0 auto;
+    }
+    .motion-video {
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: #F6F8FC;
+      box-shadow: 0 28px 86px rgba(15,23,42,.13);
+    }
+    .motion-video video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+      background: #F6F8FC;
+    }
+    .motion-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .security {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 42px;
+      align-items: start;
+    }
+    .security-note {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 18px;
+      padding: 34px;
+    }
+    .security-note h3 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .security-note p {
+      color: rgba(255,255,255,.72);
+      line-height: 1.72;
+      font-size: 15px;
+    }
+    .industry-tag {
+      width: fit-content;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand);
+      padding: 5px 9px;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .step {
+      padding: 28px;
+      border-right: 1px solid var(--line);
+    }
+    .step:last-child { border-right: 0; }
+    .step-num {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .step h3 {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .step p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .cta {
+      background: var(--navy);
+      color: #fff;
+      padding: 84px 24px;
+    }
+    .cta-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .cta h2 {
+      max-width: 730px;
+      font-size: clamp(2rem,3.2vw,2.9rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+      margin-bottom: 14px;
+      font-weight: 850;
+    }
+    .cta p {
+      color: rgba(255,255,255,.7);
+      max-width: 680px;
+      line-height: 1.75;
+    }
+
+    /* Restrained corporate presentation */
+    .hero {
+      background: #F7F8FA;
+      padding: 76px 24px 70px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero::before,
+    .hero::after { display: none; }
+    .hero-inner {
+      max-width: 1280px;
+      grid-template-columns: minmax(430px, .84fr) minmax(600px, 1.16fr);
+      gap: 64px;
+    }
+    .eyebrow {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #4F46E5;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 620px;
+      margin: 18px 0 18px;
+      font-size: clamp(2.65rem, 3vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+    }
+    .hero-lead {
+      max-width: 600px;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 26px;
+    }
+    .btn-primary,
+    .btn-secondary,
+    .btn-dark {
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    .btn-primary { box-shadow: none; }
+    .product-shell {
+      padding: 10px;
+      border: 1px solid #D5DAE3;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(15,23,42,.14);
+      transform: none;
+    }
+    .product-shell:hover {
+      transform: none;
+      box-shadow: 0 18px 45px rgba(15,23,42,.14);
+    }
+    .product-frame { border-radius: 5px; }
+    .trust-ribbon { background: #fff; }
+    .section { padding: 80px 24px; }
+    .section-soft { background: #F7F8FA; }
+    .section-head { margin-bottom: 36px; }
+    .section h2,
+    .motion-copy h2,
+    .cta h2 {
+      font-size: clamp(1.9rem, 2.7vw, 2.65rem);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+    .card,
+    .proof-card,
+    .clarity-card {
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: none;
+    }
+    .card { padding: 22px; }
+    .icon { border-radius: 6px; }
+    .showcase-screen,
+    .motion-video,
+    .security-note {
+      border-radius: 8px;
+      box-shadow: none;
+    }
+    .motion-story { background: #111827; }
+    .cta { background: #111827; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .hero-inner,
+      .credibility-inner,
+      .showcase,
+      .motion-inner,
+      .security,
+      .cta-inner,
+      .trust-ribbon-inner { grid-template-columns: 1fr; }
+      .product-shell { max-width: 860px; transform: none; }
+      .showcase-screen { position: static; }
+      .grid-4,
+      .grid-3,
+      .proof-panel,
+      .clarity-grid,
+      .steps { grid-template-columns: repeat(2,1fr); }
+      .grid-5 { grid-template-columns: repeat(3,1fr); }
+      .step:nth-child(2) { border-right: 0; }
+      .step { border-bottom: 1px solid var(--line); }
+      .step:nth-child(3), .step:nth-child(4) { border-bottom: 0; }
+    }
+    @media (max-width: 1120px) and (min-width: 1021px) {
+      .hero-inner {
+        grid-template-columns: minmax(380px, .9fr) minmax(500px, 1.1fr);
+        gap: 42px;
+      }
+      .hero h1 { font-size: 2.65rem; }
+    }
+    @media (max-width: 720px) {
+      .hero { padding: 76px 20px 60px; }
+      .hero h1 { font-size: clamp(2.25rem, 9.5vw, 2.8rem); }
+      .clarity-section { padding: 68px 20px; }
+      .section { padding: 68px 20px; }
+      .grid-4,
+      .grid-3,
+      .grid-5,
+      .proof-panel,
+      .clarity-grid,
+      .steps { grid-template-columns: 1fr; }
+      .hero-actions,
+      .actions { align-items: stretch; }
+      .btn-primary,
+      .btn-secondary,
+      .btn-dark { width: 100%; }
+      .product-caption,
+      .showcase-note,
+      .motion-caption { align-items: flex-start; flex-direction: column; }
+      .step,
+      .step:nth-child(2),
+      .step:nth-child(3) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .step:last-child { border-bottom: 0; }
     }
   </style>
 </head>
 <body>
-
-<!-- NAV -->
+  <div class="site-loader" id="siteLoader" role="status" aria-label="Loading Staafin">
+    <div class="site-loader__centre">
+      <span class="site-loader__ring"></span><span class="site-loader__ring"></span><span class="site-loader__ring"></span>
+      <img class="site-loader__symbol" src="logo-symbol.png" alt=""/>
+      <span class="site-loader__progress"></span>
+    </div>
+  </div>
+  <script src="loader.js"></script>
 <nav class="site-nav" id="navbar">
   <div class="nav-inner">
-   <a href="/" class="nav-logo">
-  <img src="logo.png" alt="Staafin" style="height: 60px; width: auto; display: block;">
-</a>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Staafin" style="height: 60px; width: auto; display: block;">
+    </a>
     <ul class="nav-links">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/features/">Features</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="features/index.html">Features</a></li>
+      <li><a href="pricing/index.html">Pricing</a></li>
+      <li><a href="about/index.html">About</a></li>
+      <li><a href="contact/index.html">Contact</a></li>
     </ul>
     <div class="nav-right">
       <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
@@ -265,306 +937,249 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="toggleNav()">Home</a>
-  <a href="/features/" onclick="toggleNav()">Features</a>
-  <a href="/pricing/" onclick="toggleNav()">Pricing</a>
-  <a href="/about/" onclick="toggleNav()">About</a>
-  <a href="/contact/" onclick="toggleNav()">Contact</a>
+  <a href="index.html" onclick="toggleNav()">Home</a>
+  <a href="features/index.html" onclick="toggleNav()">Features</a>
+  <a href="pricing/index.html" onclick="toggleNav()">Pricing</a>
+  <a href="about/index.html" onclick="toggleNav()">About</a>
+  <a href="contact/index.html" onclick="toggleNav()">Contact</a>
   <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow reveal">
-      <span class="dot-live"></span>
-      Trusted by 500+ growing teams
-    </div>
-    <h1 class="reveal d1">
-      The modern HRMS
-      <span class="grad-line">for growing teams.</span>
-    </h1>
-    <p class="reveal d2">Simplify, centralise, and empower your workforce. Built by HR professionals, for HR teams who want enterprise precision with human warmth.</p>
-    <div class="hero-btns reveal d3">
-      <a href="https://staafin.com/app/" class="btn-primary">
-        Start Free Trial
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5L12.5 8 9 11.5" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="/contact/" class="btn-outline">Book a Demo</a>
-    </div>
-    <!-- Dashboard mockup -->
-    <div class="dash-wrap reveal d4">
-      <div class="dash-chrome">
-        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
-        <div class="dash-url">app.staafin.com — Workforce Dashboard</div>
-      </div>
-      <div class="dash-screen">
-        <div class="dash-cards">
-          <div class="float-card">
-            <div class="float-label">New Hires This Month</div>
-            <div class="float-value">12</div>
-            <div class="float-sub">↑ 4 vs last month</div>
-          </div>
-          <div class="float-card">
-            <div class="float-label">Active Employees</div>
-            <div class="float-value">345</div>
-            <div class="float-sub">96% present today</div>
-          </div>
-          <div class="float-card">
-            <div class="float-label">Pending Approvals</div>
-            <div class="float-value" style="color:#A78BFA;">8</div>
-            <div class="float-sub">Leave &amp; attendance</div>
-          </div>
+<main class="home-main">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow reveal"><span></span>Designed for UK workforce teams</div>
+      <h1 class="reveal d1">Workforce management, organised around your operations.</h1>
+      <p class="hero-lead reveal d2">Manage employee records, leave, attendance, shifts, timesheets, assets and reporting through one connected HRMS.</p>
+        <div class="hero-actions reveal d3">
+          <a href="contact/index.html" class="btn-primary">Book a demo</a>
+          <a href="#modules" class="btn-secondary">Explore modules</a>
         </div>
-        <div class="dash-bars" id="dashBars">
-          <div class="dbar hi" style="height:60%;"></div>
-          <div class="dbar" style="height:45%;"></div>
-          <div class="dbar hi" style="height:78%;"></div>
-          <div class="dbar hi" style="height:90%;"></div>
-          <div class="dbar" style="height:55%;"></div>
-          <div class="dbar hi" style="height:85%;"></div>
-          <div class="dbar" style="height:65%;"></div>
-          <div class="dbar hi" style="height:95%;"></div>
-          <div class="dbar hi" style="height:72%;"></div>
-          <div class="dbar" style="height:50%;"></div>
-          <div class="dbar hi" style="height:80%;"></div>
-          <div class="dbar hi" style="height:68%;"></div>
+        <div class="hero-tags reveal d4" aria-label="Staafin platform coverage">
+          <span>UK workforce teams</span>
+          <span>Employee records</span>
+          <span>Leave and attendance</span>
+          <span>Shifts and timesheets</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOGOS -->
-<section class="logos-section">
-  <div class="logos-label reveal">Supporting growing businesses across sectors</div>
-  <div class="logos-row reveal d1">
-    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h6M7 17h8"/></svg>Fend Recruitment Ltd</div>
-    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M4 19V5h7a5 5 0 0 1 0 10H8v4"/><path d="M15 5h2a3 3 0 0 1 0 6h-2m0 0h3a4 4 0 0 1 0 8h-3"/></svg>D90s Ltd</div>
-    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M3 12h18"/><path d="M6 19V8l6-4 6 4v11"/><path d="M10 19v-5h4v5"/></svg>Movinn Plus Ltd</div>
-    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M5 11h14l-1 8H6z"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M9 15h6"/></svg>Meaty Patty</div>
-    <div class="logo-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.8"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-7h6v7"/><path d="M8 10h.01M16 10h.01"/></svg>Prime Properties</div>
-  </div>
-</section>
-
-<!-- STATS STRIP -->
-<section class="stats-strip">
-  <div class="stats-inner" style="grid-template-columns:repeat(3,1fr);max-width:760px;">
-    <div class="stat-item reveal d2">
-      <div class="stat-num"><span class="counter-num" data-target="6">0</span></div>
-      <div class="stat-label">Core modules, one platform</div>
-    </div>
-    <div class="stat-item reveal d3">
-      <div class="stat-num"><span class="counter-num" data-target="14">0</span></div>
-      <div class="stat-label">Day free trial, no card needed</div>
-    </div>
-    <div class="stat-item reveal d4">
-      <div class="stat-num"><span class="counter-num" data-target="100">0</span><span class="stat-suffix">%</span></div>
-      <div class="stat-label">UK built &amp; supported</div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES SPLIT -->
-<section class="features-split-section" id="features">
-  <div class="features-split">
-    <div class="split-text">
-      <span class="section-label reveal">Platform Overview</span>
-      <h2 class="reveal d1">Everything you need.<br/>Nothing you don't.</h2>
-      <p class="reveal d2">Say goodbye to scattered spreadsheets and clunky legacy systems. Staafin brings your entire HR operation into one beautiful, intuitive platform that your team will actually want to use.</p>
-      <ul class="check-list">
-        <li class="reveal d2"><div class="chk"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.2 2.2L9 3" stroke="#22C55E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Automated onboarding workflows</li>
-        <li class="reveal d3"><div class="chk"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.2 2.2L9 3" stroke="#22C55E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Self-service employee portals</li>
-        <li class="reveal d4"><div class="chk"><svg viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.2 2.2L9 3" stroke="#22C55E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Real-time compliance tracking</li>
-      </ul>
-      <a href="/features/" class="explore-link reveal d5">
-        Explore all features
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <!-- Device mockup -->
-    <div class="ipad-wrap reveal d2">
-      <div class="ipad-screen">
-        <div class="emp-header">
-          <div class="emp-av">EP</div>
-          <div>
-            <div class="emp-nm">Elena Petrova</div>
-            <div class="emp-rl">Senior Product Manager</div>
+      <div class="product-shell reveal d2">
+        <div class="product-frame">
+          <div class="frame-top">
+            <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+            <span class="frame-address">app.staafin.com / dashboard</span>
           </div>
-        </div>
-        <div class="emp-meta">
-          <div class="emp-meta-item">
-            <span class="meta-icon"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 5 6-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            <div><div class="meta-lbl">Email</div><div class="meta-val" style="font-size:10.5px;">elena.petrova@example.com</div></div>
-          </div>
-          <div class="emp-meta-item">
-            <span class="meta-icon"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13.5 10.5l-2-2a1 1 0 0 0-1.4 0l-1 1c-.8-.4-2.2-1.8-2.6-2.6l1-1a1 1 0 0 0 0-1.4l-2-2A1 1 0 0 0 4 3C3 5 4 10 6 12s7 3 9 2a1 1 0 0 0 .5-1.5z" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            <div><div class="meta-lbl">Phone</div><div class="meta-val">+1 (555) 123-4567</div></div>
-          </div>
-          <div class="emp-meta-item">
-            <span class="meta-icon"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.2 1 3 3.2 3 6c0 4 5 9 5 9s5-5 5-9c0-2.8-2.2-5-5-5z" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            <div><div class="meta-lbl">Location</div><div class="meta-val">London, UK</div></div>
-          </div>
-        </div>
-        <div class="org-section">
-          <div class="org-heading">Organisation Chart</div>
-          <div class="org-ceo">CEO</div>
-          <div class="org-line-v"></div>
-          <div style="display:flex; justify-content:center; margin-bottom:8px;">
-            <div class="org-chip" style="background:#1E1B4B; color:#fff; font-size:10px; padding:5px 12px; border-radius:5px; font-weight:600;">Elena Petrova (Senior PM)</div>
-          </div>
-          <div class="org-line-v"></div>
-          <div class="org-row">
-            <div class="org-chip">Product Team A</div>
-            <div class="org-chip">Product Team B</div>
+          <img src="dashboard-safe.png" alt="Staafin dashboard preview with employee records, leave, attendance and workforce modules">
+          <div class="product-caption">
+            <strong>Staafin dashboard preview</strong>
+            <span>Employee records, leave, attendance, shifts and reporting</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MODULES -->
-<section class="modules-section" id="modules">
-  <div class="section-header">
-    <span class="section-label reveal">All Modules</span>
-    <h2 class="reveal d1">A complete HR ecosystem</h2>
-    <p class="reveal d2">Powerful modules that work seamlessly together, giving you unprecedented visibility and control over your workforce.</p>
-  </div>
-  <div class="modules-grid">
-    <div class="module-card reveal">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Employee &amp; Org Management</h3>
-      <p>Centralised profiles, self-onboarding, and role-based access control for your entire workforce.</p>
+  <section class="trust-ribbon">
+    <div class="trust-ribbon-inner">
+      <p>Built for operational teams that need cleaner workforce records, fewer spreadsheets and better manager visibility.</p>
+      <div>
+        <span>Care providers</span>
+        <span>Staffing teams</span>
+        <span>Multi-site SMEs</span>
+      </div>
     </div>
-    <div class="module-card reveal d1">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-      <h3>Attendance &amp; Workflow</h3>
-      <p>Mobile and web tracking, real-time dashboards, and automated multi-level approvals.</p>
-    </div>
-    <div class="module-card reveal d2">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01"/></svg></div>
-      <h3>Leave &amp; Time-Off</h3>
-      <p>Flexible leave policies, accruals tracking, and bulk approval workflows — without spreadsheets.</p>
-    </div>
-    <div class="module-card reveal d3">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <h3>Asset Management</h3>
-      <p>Centralised tracking, QR-code identification, and full lifecycle management of company assets.</p>
-    </div>
-    <div class="module-card reveal d4">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
-      <h3>Hiring &amp; Recruitment</h3>
-      <p>AI-powered resume parsing, visual hiring pipelines, and seamless handoff to onboarding.</p>
-    </div>
-    <div class="module-card reveal d5">
-      <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="2"/></svg></div>
-      <h3>Shift &amp; Timesheet</h3>
-      <p>Flexible shift planning, smart auto-allocation, and automatic timesheet generation.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY STAAFIN -->
-<section class="testi-section" id="why-staafin">
-  <div class="section-header">
-    <span class="section-label reveal">Why Staafin</span>
-    <h2 class="reveal d1">Built by people who run workforce operations</h2>
-  </div>
-  <div class="testi-grid">
-    <div class="testi-card reveal">
-      <p class="testi-text">Staafin is built by Elite Care and Support Ltd, a UK company that runs care operations — so every module is shaped by real rota, cover and compliance problems, not guesswork.</p>
-      <div class="testi-author">
-        <div class="testi-av" style="background: linear-gradient(135deg,#6366F1,#A78BFA);">EC</div>
-        <div>
-          <div class="testi-name">Built by operators</div>
-          <div class="testi-role">Elite Care and Support Ltd · Company No. 14303034</div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head center">
+        <div class="kicker reveal">Business outcomes</div>
+        <h2 class="reveal d1">Designed for the workforce problems that slow teams down.</h2>
+        <p class="reveal d2">Staafin brings people data, schedules, approvals and reporting into one operating rhythm, especially where daily cover, documents and working-time evidence matter.</p>
+      </div>
+      <div class="grid-4">
+        <article class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Reduce admin drag</h3><p>Centralise employee records, documents, roles, departments and approval flows so teams stop chasing updates across files.</p></article>
+        <article class="card reveal d1"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 3v3M17 3v3M4 9h16M6 21h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Control cover and absence</h3><p>Connect leave, rota visibility, replacements and attendance so managers see coverage risks before they become problems.</p></article>
+        <article class="card reveal d2"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Improve timesheet evidence</h3><p>Bring attendance, timesheets and manager approvals closer together to reduce disputes and unclear working-time records.</p></article>
+        <article class="card reveal d3"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Strengthen accountability</h3><p>Use role-based access, structured records and approval context to keep sensitive workforce data controlled.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="modules">
+    <div class="section-inner showcase">
+      <div>
+        <div class="section-head">
+          <div class="kicker reveal">Product modules</div>
+          <h2 class="reveal d1">The product stays visible because trust starts with seeing it.</h2>
+          <p class="reveal d2">Each module is grounded in a real workflow: people records, leave, attendance, shifts and reports that managers actually use.</p>
+        </div>
+        <div class="showcase-list">
+          <button class="showcase-item active" data-shot="dashboard-safe.png" data-title="Dashboard overview" data-note="A clear home view for daily workforce activity."><strong>Dashboard overview</strong><span>Managers can see key workforce areas from one place.</span></button>
+          <button class="showcase-item" data-shot="employees-safe.png" data-title="Employee records" data-note="Profiles, documents, roles, departments and branches."><strong>Employee records</strong><span>Keep people data structured and easier to maintain.</span></button>
+          <button class="showcase-item" data-shot="leave-safe.png" data-title="Leave and availability" data-note="Leave requests, balances and availability context."><strong>Leave and availability</strong><span>Support approvals, balances and replacement planning.</span></button>
+          <button class="showcase-item" data-shot="attendance-safe.png" data-title="Attendance and timesheets" data-note="Working-time evidence for managers and payroll review."><strong>Attendance and timesheets</strong><span>Bring attendance activity and manager review closer together.</span></button>
+          <button class="showcase-item" data-shot="shift-calendar-safe.png" data-title="Shift planning" data-note="Shift calendars and allocation views for operational coverage."><strong>Shift planning</strong><span>Review rota patterns, allocation and manager visibility.</span></button>
+          <button class="showcase-item" data-shot="ats-safe.png" data-title="Recruitment pipeline" data-note="Applicant tracking and hiring records in the same workforce platform."><strong>Recruitment pipeline</strong><span>Keep hiring stages and candidate records structured.</span></button>
+          <button class="showcase-item" data-shot="reports-safe.png" data-title="Reports and visibility" data-note="Workforce reporting across records, cover and activity."><strong>Reports and visibility</strong><span>Turn workforce data into practical management insight.</span></button>
+        </div>
+      </div>
+      <div class="showcase-screen reveal d2">
+        <img id="moduleShot" src="dashboard-safe.png" alt="Staafin dashboard screenshot">
+        <div class="showcase-note">
+          <strong id="moduleTitle">Dashboard overview</strong>
+          <span id="moduleNote">A clear home view for daily workforce activity.</span>
         </div>
       </div>
     </div>
-    <div class="testi-card reveal d1">
-      <p class="testi-text">Employee records, leave, attendance, shifts, timesheets, assets and recruitment in one connected platform — fewer spreadsheets and fewer disconnected tools for your team.</p>
-      <div class="testi-author">
-        <div class="testi-av" style="background: linear-gradient(135deg,#06B6D4,#6366F1);">1</div>
-        <div>
-          <div class="testi-name">One connected platform</div>
-          <div class="testi-role">Six core modules, one employee record</div>
+  </section>
+
+  <section class="motion-story">
+    <div class="motion-inner">
+      <div class="motion-copy">
+        <div class="kicker reveal">Explainer video</div>
+        <h2 class="reveal d1">See the problems Staafin brings into order.</h2>
+        <p class="reveal d2">Use this short motion piece to explain the operational pain: timesheet errors, missing assets, leave gaps and scattered workforce records. The product screenshots show the system; the video explains why it matters.</p>
+        <div class="motion-points reveal d3">
+          <span>Best placed after product proof, not before it</span>
+          <span>Complete explainer, available on demand</span>
+          <span>Higher-quality web version without homepage autoplay</span>
+        </div>
+      </div>
+      <div class="motion-video reveal d2">
+        <video controls preload="none" playsinline poster="staafin-motion-poster.png" aria-label="Staafin motion graphics explainer video">
+          <source src="staafin-motion-web.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="motion-caption">
+          <strong>Staafin motion explainer</strong>
+          <span>Web-optimised version, loads only when played</span>
         </div>
       </div>
     </div>
-    <div class="testi-card reveal d2">
-      <p class="testi-text">Start with a 14-day free trial — no credit card required. Transparent per-user pricing that scales only when your team does.</p>
-      <div class="testi-author">
-        <div class="testi-av" style="background: linear-gradient(135deg,#E879A0,#818CF8);">14</div>
-        <div>
-          <div class="testi-name">Try before you buy</div>
-          <div class="testi-role">Free 14-day trial, cancel anytime</div>
-        </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head center">
+        <div class="kicker reveal">Core capabilities</div>
+        <h2 class="reveal d1">The operating system for workforce management.</h2>
+        <p class="reveal d2">Each module supports a real management responsibility, while shared data keeps the wider business aligned.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card reveal"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9.5 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>People and organisation</h3><p>Employee profiles, documents, departments, designations, branches, access roles and reporting lines.</p></article>
+        <article class="card reveal d1"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M8 2v4M16 2v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Leave and availability</h3><p>Policy-driven leave requests, balances, approvals, calendars and replacement visibility.</p></article>
+        <article class="card reveal d2"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Attendance and timesheets</h3><p>Daily attendance activity, exception handling, working-time evidence and timesheet support.</p></article>
+        <article class="card reveal d3"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Hiring and onboarding</h3><p>Applicant management, candidate pipelines, recruitment records and handoff into active employee setup.</p></article>
+        <article class="card reveal d4"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-8h6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Assets and document tracking</h3><p>Track company assets, assignments, status, evidence and operational records that managers need.</p></article>
+        <article class="card reveal d5"><div class="icon"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Reports and analytics</h3><p>Turn employee, attendance, leave, asset and recruitment data into useful workforce visibility.</p></article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div>
-    <h2 class="reveal">Ready to transform your HR?</h2>
-    <p class="reveal d1">See how Staafin fits your team — start a free trial or book a walkthrough with us.</p>
-    <div class="cta-btns reveal d2">
-      <a href="https://staafin.com/app/" class="btn-outline-white">Start your 14-day free trial</a>
-      <a href="/contact/" class="btn-outline-white">Talk to Sales</a>
+  <section class="section section-soft">
+    <div class="section-inner security">
+      <div class="security-note reveal">
+        <h3>Corporate clients need confidence before they need features.</h3>
+        <p>Staafin is designed to help organisations manage sensitive workforce data with structured records, access control and clear operational workflows. For UK teams, that means practical support for cleaner people records, working-time visibility and document tracking.</p>
+      </div>
+      <div class="grid-4">
+        <article class="card reveal d1"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" stroke="currentColor" stroke-width="2"/></svg></div><h3>Role-based access</h3><p>Give owners, HR teams, managers and employees the right access for their responsibilities.</p></article>
+        <article class="card reveal d2"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 7h8M8 12h8M8 17h5M5 3h14v18H5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Right-to-work records</h3><p>Keep key employee documents and workforce records easier to organise, review and maintain.</p></article>
+        <article class="card reveal d3"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Working-time visibility</h3><p>Connect attendance, timesheets and approvals so managers can review working patterns with more confidence.</p></article>
+        <article class="card reveal d4"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 12h8M12 8v8M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Guided rollout</h3><p>Start with data setup, manager training, workflow configuration and reporting priorities.</p></article>
+      </div>
     </div>
-    <p class="cta-note reveal d3">No credit card required. Cancel anytime.</p>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head center">
+        <div class="kicker reveal">Who Staafin is for</div>
+        <h2 class="reveal d1">Built for UK businesses where people operations affect daily service.</h2>
+      </div>
+      <div class="grid-5">
+        <article class="card reveal"><div class="industry-tag">Care</div><h3>Care homes and providers</h3><p>Coordinate staff records, shifts, leave, attendance and manager visibility.</p></article>
+        <article class="card reveal d1"><div class="industry-tag">Recruitment</div><h3>Agencies and staffing teams</h3><p>Track workers, candidates, assignments, approvals and fulfilment visibility.</p></article>
+        <article class="card reveal d2"><div class="industry-tag">Operations</div><h3>Multi-site SMEs</h3><p>Manage branches, departments, managers, records and workforce activity.</p></article>
+        <article class="card reveal d3"><div class="industry-tag">Facilities</div><h3>Security and cleaning</h3><p>Keep rota, attendance, cover, assets and compliance records aligned.</p></article>
+        <article class="card reveal d4"><div class="industry-tag">Field teams</div><h3>Property and mobile teams</h3><p>Coordinate mobile staff, assets, site activity and operational reporting.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="section-inner">
+      <div class="section-head center">
+        <div class="kicker reveal">Rollout path</div>
+        <h2 class="reveal d1">A practical route from scattered data to controlled workforce operations.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-num">1</div><h3>Map the organisation</h3><p>Branches, departments, job types, managers, employee groups and access roles.</p></div>
+        <div class="step reveal d1"><div class="step-num">2</div><h3>Import workforce data</h3><p>Move core employee records, documents, roles and reporting structure into Staafin.</p></div>
+        <div class="step reveal d2"><div class="step-num">3</div><h3>Configure workflows</h3><p>Set leave, attendance, shifts, approvals, recruitment and reporting priorities.</p></div>
+        <div class="step reveal d3"><div class="step-num">4</div><h3>Launch with managers</h3><p>Train users, monitor adoption and refine the system around daily operational reality.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-inner">
+      <div>
+        <h2 class="reveal">See how Staafin would fit your workforce.</h2>
+        <p class="reveal d1">Book a walkthrough using your branches, policies, shift patterns and reporting needs as the example.</p>
+      </div>
+      <div class="actions reveal d2">
+        <a href="contact/index.html" class="btn-primary">Book a demo</a>
+        <a href="#modules" class="btn-secondary">Explore modules</a>
+      </div>
+    </div>
+  </section>
+</main>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-<div class="footer-brand">
-  <div class="nav-logo">
-    <img src="logo.png" alt="Staafin" style="height: 44px; width: auto; display: block;">
-  </div>
-  <p>The modern HRMS for growing organisations, built by Elite Care and Support Ltd — a UK care and software company. Simplify, centralise, and empower your workforce.</p>
-</div>
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="logo.png" alt="Staafin" style="height: 44px; width: auto; display: block;">
+        </div>
+        <p>HRMS and workforce management software for UK care providers, staffing teams and operational SMEs that need cleaner people records, shifts, attendance, leave and reporting.</p>
+      </div>
       <div class="footer-col">
         <h4>Product</h4>
         <ul>
-          <li><a href="/features/">Features</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/contact/">Book a demo</a></li>
+          <li><a href="features/index.html">Features</a></li>
+          <li><a href="pricing/index.html">Pricing</a></li>
+          <li><a href="contact/index.html">Book a demo</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="about/index.html">About Us</a></li>
+          <li><a href="contact/index.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Use</a></li>
-          <li><a href="/security/">Security</a></li>
+          <li><a href="privacy/index.html">Privacy</a></li>
+          <li><a href="terms/index.html">Terms</a></li>
+          <li><a href="security/index.html">Security</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>
-      <div class="footer-bottom-links"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact Us</a></div>
+      <div class="footer-bottom-links"><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a><a href="contact/index.html">Contact Us</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-  // Nav toggle
   function toggleNav(){document.getElementById('mobileNav').classList.toggle('open');}
 
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(x => {
       if (x.isIntersecting) {
@@ -575,37 +1190,48 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Nav shadow on scroll
+  const showcaseItems = Array.from(document.querySelectorAll('.showcase-item'));
+  let activeShowcase = 0;
+  let showcaseTimer;
+
+  function activateShowcase(index) {
+    const button = showcaseItems[index];
+    if (!button) return;
+    showcaseItems.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    const shot = document.getElementById('moduleShot');
+    const title = document.getElementById('moduleTitle');
+    const note = document.getElementById('moduleNote');
+    shot.style.opacity = '0';
+    window.setTimeout(() => {
+      shot.src = button.dataset.shot;
+      shot.alt = 'Staafin ' + button.dataset.title + ' screenshot';
+      title.textContent = button.dataset.title;
+      note.textContent = button.dataset.note;
+      shot.style.opacity = '1';
+    }, 140);
+    activeShowcase = index;
+  }
+
+  function startShowcaseTimer() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    showcaseTimer = window.setInterval(() => {
+      activateShowcase((activeShowcase + 1) % showcaseItems.length);
+    }, 5200);
+  }
+
+  showcaseItems.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      window.clearInterval(showcaseTimer);
+      activateShowcase(index);
+      startShowcaseTimer();
+    });
+  });
+  startShowcaseTimer();
+
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.3)' : 'none';
   });
-
-  // Animated counters
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1800;
-    const startTime = performance.now();
-    function update(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.round(eased * target);
-      el.textContent = value + suffix;
-      if (progress < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-  }
-
-  const counterObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.counter-num').forEach(animateCounter);
-        counterObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.stats-strip').forEach(el => counterObs.observe(el));
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a474973cff63c494',t:'MTc5MTQ1NjY5MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

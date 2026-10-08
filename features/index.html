@@ -2,20 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Features — Staafin</title>
+  <title>Features | Staafin</title>
+  <meta name="description" content="Explore Staafin modules for employee records, leave, attendance, shifts, timesheets, assets, recruitment and workforce reporting."/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../styles.css"/>
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="canonical" href="https://staafin.co.uk/features/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Staafin"/>
-  <meta property="og:title" content="Features — Staafin"/>
-  <meta property="og:description" content="Employee records, leave and attendance, shift and timesheet management, assets, hiring and recruitment, and reporting — one connected HRMS."/>
-  <meta property="og:url" content="https://staafin.co.uk/features/"/>
-  <meta property="og:image" content="https://staafin.co.uk/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
   <style>
     .page-hero{
       background: var(--nav-bg);
@@ -47,7 +40,9 @@
     .feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-2);line-height:1.55;}
     .feat-list li .chk2{width:18px;height:18px;border-radius:50%;background:#DCFCE7;border:2px solid #86EFAC;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
     .feat-list li .chk2 svg{width:9px;height:9px;}
-    .feat-visual{background:var(--bg-2);border:1px solid var(--border);border-radius:18px;padding:28px;min-height:200px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-md);}
+    .feat-visual{background:var(--bg-2);border:1px solid var(--border);border-radius:18px;padding:16px;min-height:200px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--shadow-md);overflow:hidden;}
+    .feature-shot{width:100%;border-radius:12px;border:1px solid var(--border);box-shadow:0 18px 40px rgba(15,23,42,0.12);}
+    .shot-caption{font-size:12px;color:var(--muted);line-height:1.6;margin:2px 4px 0;}
     .vis-row{display:flex;align-items:center;gap:10px;}
     .vis-icon{width:36px;height:36px;border-radius:9px;background:var(--purple-xl);color:var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
     .vis-icon svg{width:18px;height:18px;}
@@ -60,20 +55,28 @@
     .vs-num{font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(90deg,#6366F1,#A855C8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .vs-lbl{font-size:10px;color:var(--muted);margin-top:2px;}
     .divider{height:1px;background:var(--border);max-width:1100px;margin:0 auto 80px;}
-    .features-cta{background:linear-gradient(135deg,#5B47E0 0%,#4338CA 50%,#3B82F6 100%);padding:72px 24px;text-align:center;}
-    .features-cta h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;}
-    .features-cta p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:420px;margin:0 auto 28px;}
+    .features-cta{padding:72px 24px;text-align:center;}
+    .features-cta h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:var(--text);letter-spacing:-0.03em;margin-bottom:12px;}
+    .features-cta p{font-size:1rem;color:var(--muted);max-width:420px;margin:0 auto 28px;}
     @media(max-width:900px){.feat-block{grid-template-columns:1fr;gap:36px;}.feat-block.flip{direction:ltr;}}
     @media(max-width:600px){.features-page{padding:48px 16px;}.feat-block{margin-bottom:56px;}}
   </style>
 </head>
 <body>
+  <div class="site-loader" id="siteLoader" role="status" aria-label="Loading Staafin">
+    <div class="site-loader__centre">
+      <span class="site-loader__ring"></span><span class="site-loader__ring"></span><span class="site-loader__ring"></span>
+      <img class="site-loader__symbol" src="../logo-symbol.png" alt=""/>
+      <span class="site-loader__progress"></span>
+    </div>
+  </div>
+  <script src="../loader.js"></script>
 <nav class="site-nav" id="navbar">
   <div class="nav-inner">
-   <a href="/" class="nav-logo">
+   <a href="../index.html" class="nav-logo">
   <img src="../logo.png" alt="Staafin" style="height: 60px; width: auto; display: block;">
 </a>
-    <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/features/" class="active">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../features/index.html" class="active">Features</a></li><li><a href="../pricing/index.html">Pricing</a></li><li><a href="../about/index.html">About</a></li><li><a href="../contact/index.html">Contact</a></li></ul>
     <div class="nav-right">
       <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
       <button class="hamburger" onclick="toggleNav()" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 5.5h16M3 11h16M3 16.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
@@ -81,18 +84,18 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="toggleNav()">Home</a>
-  <a href="/features/" onclick="toggleNav()">Features</a>
-  <a href="/pricing/" onclick="toggleNav()">Pricing</a>
-  <a href="/about/" onclick="toggleNav()">About</a>
-  <a href="/contact/" onclick="toggleNav()">Contact</a>
+  <a href="../index.html" onclick="toggleNav()">Home</a>
+  <a href="../features/index.html" onclick="toggleNav()">Features</a>
+  <a href="../pricing/index.html" onclick="toggleNav()">Pricing</a>
+  <a href="../about/index.html" onclick="toggleNav()">About</a>
+  <a href="../contact/index.html" onclick="toggleNav()">Contact</a>
   <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
 </div>
 
 <section class="page-hero">
-  <div class="page-hero-label reveal">Platform Features</div>
-  <h1 class="reveal d1">Powerful features.<br/>Simple interface.</h1>
-  <p class="reveal d2">Explore the 7 modules that make Staafin the complete platform for modern, growing HR teams.</p>
+  <div class="page-hero-label reveal">Platform modules</div>
+  <h1 class="reveal d1">One place for daily workforce operations</h1>
+  <p class="reveal d2">Staafin brings employee records, leave, attendance, shifts, timesheets, assets and reporting into a connected HRMS for UK teams.</p>
 </section>
 
 <div class="features-page">
@@ -100,26 +103,20 @@
   <!-- 1 Employee -->
   <div class="feat-block reveal">
     <div>
-      <div class="feat-tag">People Hub</div>
+      <div class="feat-tag">Employee records</div>
       <h2>Employee &amp; Organisation Management</h2>
-      <p>A single source of truth for your entire workforce. Manage profiles, history, documents and org structure from one centralised platform.</p>
+      <p>Keep employee details, documents and organisation structure in one controlled place, so managers are not relying on scattered files.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Centralised employee profiles &amp; employment history</li>
-        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Self-onboarding &amp; employee self-service portal</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Employee self-service for everyday updates</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Role-based access, permissions &amp; delegation</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Secure document &amp; file management</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dynamic org chart builder</li>
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="vis-text"><div class="vis-label">Total Employees</div><div style="font-size:1.4rem;font-weight:800;color:#0F172A;">348</div></div></div>
-      <div class="vis-row"><div style="flex:1"><div class="vis-label">Onboarding completion</div><div class="vis-bar"><div class="vis-bar-fill" style="width:87%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">87%</span></div>
-      <div class="vis-row"><div style="flex:1"><div class="vis-label">Document compliance</div><div class="vis-bar"><div class="vis-bar-fill" style="width:94%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">94%</span></div>
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">12</div><div class="vs-lbl">New this month</div></div>
-        <div class="vis-stat"><div class="vs-num">5</div><div class="vs-lbl">Onboarding</div></div>
-        <div class="vis-stat"><div class="vs-num">3</div><div class="vs-lbl">Departments</div></div>
-      </div>
+      <img src="../employees-safe.png" alt="Staafin employee directory screenshot" class="feature-shot">
+      <p class="shot-caption">Real product-style view showing employee directory and profile records.</p>
     </div>
   </div>
 
@@ -128,9 +125,9 @@
   <!-- 2 Attendance -->
   <div class="feat-block flip reveal">
     <div>
-      <div class="feat-tag">Presence Intelligence</div>
+      <div class="feat-tag">Attendance</div>
       <h2>Attendance &amp; Workflow Management</h2>
-      <p>Know who's in, who's out, and who needs follow-up — in real time. Automated approval workflows eliminate back-and-forth.</p>
+      <p>See attendance activity clearly and help managers spot missing records, late entries and approval work before it becomes payroll noise.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Mobile, web or biometric clock-in/out</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Real-time dashboards for HR &amp; managers</li>
@@ -139,13 +136,8 @@
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="vis-text"><div class="vis-label">Today's Attendance</div><div style="font-size:1.4rem;font-weight:800;color:#0F172A;">96%</div></div></div>
-      <div class="vis-row"><div style="flex:1"><div class="vis-label">On time arrivals</div><div class="vis-bar"><div class="vis-bar-fill" style="width:96%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">96%</span></div>
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">334</div><div class="vs-lbl">Present</div></div>
-        <div class="vis-stat"><div class="vs-num">8</div><div class="vs-lbl">On Leave</div></div>
-        <div class="vis-stat"><div class="vs-num">6</div><div class="vs-lbl">Pending</div></div>
-      </div>
+      <img src="../attendance-safe.png" alt="Staafin attendance screen screenshot" class="feature-shot">
+      <p class="shot-caption">Attendance workflows help teams review activity and exceptions in context.</p>
     </div>
   </div>
 
@@ -154,9 +146,9 @@
   <!-- 3 Leave -->
   <div class="feat-block reveal">
     <div>
-      <div class="feat-tag">Time-Off Engine</div>
+      <div class="feat-tag">Leave planning</div>
       <h2>Advanced Leave &amp; Time-Off Management</h2>
-      <p>Build leave policies your way. From accrual rules to holiday calendars — every detail is configurable without touching a spreadsheet.</p>
+      <p>Manage leave requests, availability and balances in one place, with a clearer view of coverage across the team.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Flexible leave policy &amp; workflow builder</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom accruals, carry-forward &amp; holiday calendars</li>
@@ -165,12 +157,8 @@
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-row"><div class="vis-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div><div class="vis-text"><div class="vis-label">Leave Overview</div><div style="font-size:1rem;font-weight:700;color:#0F172A;">April 2026</div></div></div>
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">18</div><div class="vs-lbl">Avg days taken</div></div>
-        <div class="vis-stat"><div class="vs-num">7</div><div class="vs-lbl">Pending requests</div></div>
-        <div class="vis-stat"><div class="vs-num">4</div><div class="vs-lbl">Leave types</div></div>
-      </div>
+      <img src="../leave-safe.png" alt="Staafin leave screen screenshot" class="feature-shot">
+      <p class="shot-caption">Leave views support quick availability checks and balance reviews.</p>
     </div>
   </div>
 
@@ -179,9 +167,9 @@
   <!-- 4 Assets -->
   <div class="feat-block flip reveal">
     <div>
-      <div class="feat-tag">Asset Command</div>
+      <div class="feat-tag">Company assets</div>
       <h2>Asset Management</h2>
-      <p>Track every laptop, phone, and piece of equipment across your organisation. Never lose visibility of company assets again.</p>
+      <p>Track allocated assets, returns and ownership history so equipment does not disappear into spreadsheets or messages.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Centralised asset tracking &amp; allocation</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Asset lifecycle management with audit readiness</li>
@@ -190,12 +178,8 @@
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">214</div><div class="vs-lbl">Total Assets</div></div>
-        <div class="vis-stat"><div class="vs-num">99%</div><div class="vs-lbl">Compliance</div></div>
-        <div class="vis-stat"><div class="vs-num">3</div><div class="vs-lbl">Due Returns</div></div>
-      </div>
-      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Asset allocation rate</div><div class="vis-bar"><div class="vis-bar-fill" style="width:91%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">91%</span></div>
+      <img src="../dashboard-safe.png" alt="Staafin dashboard screenshot" class="feature-shot">
+      <p class="shot-caption">Dashboard and operational modules give managers a cleaner daily view.</p>
     </div>
   </div>
 
@@ -204,23 +188,19 @@
   <!-- 5 Hiring -->
   <div class="feat-block reveal">
     <div>
-      <div class="feat-tag">Talent Acquisition</div>
+      <div class="feat-tag">Recruitment</div>
       <h2>Hiring &amp; Recruitment</h2>
-      <p>Replace email chaos with a visual hiring pipeline. AI parses CVs, ranks candidates, and helps you move the right people forward faster.</p>
+      <p>Manage applicants and hiring stages without losing candidate information across inboxes and manual trackers.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Visual hiring pipeline &amp; applicant tracking</li>
-        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>AI-powered resume parsing &amp; candidate profiling</li>
+        <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Candidate profiles and recruitment records</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Job boards, email templates &amp; bulk communication</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Seamless transition from hiring to onboarding</li>
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">14</div><div class="vs-lbl">Open Roles</div></div>
-        <div class="vis-stat"><div class="vs-num">87</div><div class="vs-lbl">Applicants</div></div>
-        <div class="vis-stat"><div class="vs-num">6</div><div class="vs-lbl">Interviews</div></div>
-      </div>
-      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Pipeline conversion rate</div><div class="vis-bar"><div class="vis-bar-fill" style="width:68%;"></div></div></div><span style="font-size:12px;font-weight:700;color:#6366F1;margin-left:8px;">68%</span></div>
+      <img src="../ats-safe.png" alt="Staafin applicant tracking screen screenshot" class="feature-shot">
+      <p class="shot-caption">Applicant tracking views keep hiring stages and candidate records structured.</p>
     </div>
   </div>
 
@@ -229,9 +209,9 @@
   <!-- 6 Shifts -->
   <div class="feat-block flip reveal">
     <div>
-      <div class="feat-tag">Shift Orchestration</div>
+      <div class="feat-tag">Shifts and timesheets</div>
       <h2>Shift &amp; Timesheet Management</h2>
-      <p>Plan shifts intelligently. Auto-allocate based on availability, detect conflicts instantly, and generate timesheets automatically.</p>
+      <p>Plan shifts, reduce allocation conflicts and connect attendance activity with timesheet records.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Flexible shifts: fixed, rotating &amp; custom</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Auto-allocation &amp; conflict detection</li>
@@ -240,11 +220,8 @@
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">28</div><div class="vs-lbl">Active Shifts</div></div>
-        <div class="vis-stat"><div class="vs-num">0</div><div class="vs-lbl">Conflicts</div></div>
-        <div class="vis-stat"><div class="vs-num">100%</div><div class="vs-lbl">Coverage</div></div>
-      </div>
+      <img src="../shift-calendar-safe.png" alt="Staafin shift calendar screen screenshot" class="feature-shot">
+      <p class="shot-caption">Shift calendar views help operational managers understand coverage and changes.</p>
     </div>
   </div>
 
@@ -253,9 +230,9 @@
   <!-- 7 Reports -->
   <div class="feat-block reveal">
     <div>
-      <div class="feat-tag">Workforce Intelligence</div>
+      <div class="feat-tag">Reporting</div>
       <h2>Reports &amp; Insights</h2>
-      <p>Stop running on gut feel. Staafin surfaces real-time data so every decision — from headcount to compliance — is backed by facts.</p>
+      <p>Use workforce reports to understand employee records, leave, attendance and asset activity without rebuilding spreadsheets each week.</p>
       <ul class="feat-list">
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Real-time dashboards &amp; analytics</li>
         <li><div class="chk2"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Attendance, leave, workforce &amp; asset reports</li>
@@ -263,71 +240,17 @@
       </ul>
     </div>
     <div class="feat-visual">
-      <div class="vis-stat-row">
-        <div class="vis-stat"><div class="vs-num">96%</div><div class="vs-lbl">Attendance Rate</div></div>
-        <div class="vis-stat"><div class="vs-num">4.2h</div><div class="vs-lbl">Avg Overtime</div></div>
-        <div class="vis-stat"><div class="vs-num">18d</div><div class="vs-lbl">Avg Leave</div></div>
-      </div>
-      <div class="vis-row" style="margin-top:8px;"><div style="flex:1"><div class="vis-label">Overall HR health score</div><div class="vis-bar"><div class="vis-bar-fill" style="width:92%;background:linear-gradient(90deg,#22C55E,#86EFAC);"></div></div></div><span style="font-size:12px;font-weight:700;color:#16A34A;margin-left:8px;">92%</span></div>
+      <img src="../reports-safe.png" alt="Staafin reporting screen screenshot" class="feature-shot">
+      <p class="shot-caption">Reporting views turn daily workforce records into management visibility.</p>
     </div>
   </div>
 
 </div>
 
-<!-- PRODUCT TOUR — real screenshots captured from the Staafin app, stored in /images/ -->
-<style>
-  .tour-section{padding:80px 24px;background:var(--bg-2);border-top:1px solid var(--border);}
-  .tour-section .section-header{text-align:center;margin-bottom:48px;}
-  .tour-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .tour-frame{margin:0;}
-  .tour-shot{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);}
-  .tour-placeholder{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:2px dashed var(--border);border-radius:14px;background:var(--bg);color:var(--muted);font-size:13.5px;font-weight:600;text-align:center;padding:16px;}
-  .tour-placeholder small{font-weight:400;font-size:12px;opacity:.8;}
-  .tour-shot img{display:block;width:100%;height:auto;}
-  .tour-frame figcaption{font-size:13px;font-weight:700;color:var(--text-2);margin-top:12px;text-align:center;}
-  @media (max-width:900px){.tour-grid{grid-template-columns:1fr;max-width:520px;}}
-</style>
-<section class="tour-section" id="tour">
-  <div class="section-header">
-    <span class="section-label reveal">Product Tour</span>
-    <h2 class="reveal d1">Inside Staafin</h2>
-    <p class="reveal d2" style="color:var(--muted);max-width:520px;margin:12px auto 0;line-height:1.7;">Real screens from the platform — the dashboard your managers open each morning, the employee records they maintain, and the allocation view that keeps every shift filled.</p>
-  </div>
-  <div class="tour-grid">
-    <figure class="tour-frame reveal">
-      <div class="tour-shot" data-img="/images/tour-dashboard.png">
-        <div class="tour-placeholder">Dashboard screenshot<small>add /images/tour-dashboard.png</small></div>
-      </div>
-      <figcaption>Workforce dashboard</figcaption>
-    </figure>
-    <figure class="tour-frame reveal d1">
-      <div class="tour-shot" data-img="/images/tour-people.png">
-        <div class="tour-placeholder">Employee records screenshot<small>add /images/tour-people.png</small></div>
-      </div>
-      <figcaption>Employee records &amp; profiles</figcaption>
-    </figure>
-    <figure class="tour-frame reveal d2">
-      <div class="tour-shot" data-img="/images/tour-shifts.png">
-        <div class="tour-placeholder">Shift allocation screenshot<small>add /images/tour-shifts.png</small></div>
-      </div>
-      <figcaption>Shift allocation &amp; rota</figcaption>
-    </figure>
-  </div>
-</section>
-<script>
-  // Swap tour placeholders for real screenshots when the image files exist
-  document.querySelectorAll('.tour-shot[data-img]').forEach(function(frame){
-    var img = new Image();
-    img.alt = frame.parentElement.querySelector('figcaption').textContent;
-    img.onload = function(){ frame.innerHTML = ''; frame.appendChild(img); };
-    img.src = frame.getAttribute('data-img');
-  });
-</script>
-
-<section class="features-cta">
-  <h2 class="reveal">See it all in action</h2>
-  <p class="reveal d1">Start your free 14-day trial and explore every feature — no credit card needed.</p>
-  <a href="https://staafin.com/app/" class="btn-outline-white reveal d2">Start Free Trial</a>
+<section class="features-cta brand-cta">
+  <h2 class="reveal">See the modules working together</h2>
+  <p class="reveal d1">Book a guided walkthrough and review the workflows that matter most to your team.</p>
+  <a href="../contact/index.html" class="btn-primary reveal d2">Book a demo</a>
 </section>
 
 <footer class="site-footer">
@@ -337,15 +260,22 @@
   <div class="nav-logo">
     <img src="../logo.png" alt="Staafin" style="height: 44px; width: auto; display: block;">
   </div>
-  <p>The modern HRMS for growing organisations, built by Elite Care and Support Ltd — a UK care and software company. Simplify, centralise, and empower your workforce.</p>
+  <p>Workforce management software for employee records, leave, attendance, shifts, assets, timesheets and reporting.</p>
 </div>
-      <div class="footer-col"><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Book a demo</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="../features/index.html">Features</a></li><li><a href="../pricing/index.html">Pricing</a></li><li><a href="../contact/index.html">Book a demo</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Contact</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy/index.html">Privacy</a></li>
+          <li><a href="../terms/index.html">Terms</a></li>
+          <li><a href="../security/index.html">Security</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>
-      <div class="footer-bottom-links"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact Us</a></div>
+      <div class="footer-bottom-links"><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a><a href="../contact/index.html">Contact Us</a></div>
     </div>
   </div>
 </footer>
@@ -355,5 +285,5 @@
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,0.25)':'none';});
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4749748c9ad075d',t:'MTc5MTQ1NjY5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

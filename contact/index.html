@@ -2,21 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact — Staafin</title>
+  <title>Contact | Staafin</title>
+  <meta name="description" content="Contact Staafin to request a product demo, discuss pricing, or review workforce management requirements for your organisation."/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../styles.css"/>
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="canonical" href="https://staafin.co.uk/contact/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Staafin"/>
-  <meta property="og:title" content="Contact — Staafin"/>
-  <meta property="og:description" content="Get in touch with the Staafin team. We respond within one business day."/>
-  <meta property="og:url" content="https://staafin.co.uk/contact/"/>
-  <meta property="og:image" content="https://staafin.co.uk/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
   <style>
     .page-hero {
       background: var(--nav-bg);
@@ -85,9 +78,9 @@
     .success-msg { display:none; background:#F0FDF4; border:1px solid #86EFAC; border-radius:9px; padding:16px; font-size:14px; color:#166534; font-weight:500; text-align:center; margin-top:16px; }
 
     /* Bottom CTA */
-    .contact-cta { background:linear-gradient(135deg,#5B47E0 0%,#4338CA 50%,#3B82F6 100%); padding:72px 24px; text-align:center; margin-top:0; }
-    .contact-cta h2 { font-size:clamp(1.8rem,3vw,2.5rem); font-weight:900; color:#fff; letter-spacing:-0.03em; margin-bottom:12px; }
-    .contact-cta p { font-size:1rem; color:rgba(255,255,255,0.75); max-width:400px; margin:0 auto 28px; }
+    .contact-cta { padding:72px 24px; text-align:center; margin-top:0; }
+    .contact-cta h2 { font-size:clamp(1.8rem,3vw,2.5rem); font-weight:900; color:var(--text); letter-spacing:-0.03em; margin-bottom:12px; }
+    .contact-cta p { font-size:1rem; color:var(--muted); max-width:400px; margin:0 auto 28px; }
 
     @media (max-width:768px) {
       .contact-layout { grid-template-columns:1fr; gap:36px; padding:40px 20px; }
@@ -97,18 +90,26 @@
   </style>
 </head>
 <body>
+  <div class="site-loader" id="siteLoader" role="status" aria-label="Loading Staafin">
+    <div class="site-loader__centre">
+      <span class="site-loader__ring"></span><span class="site-loader__ring"></span><span class="site-loader__ring"></span>
+      <img class="site-loader__symbol" src="../logo-symbol.png" alt=""/>
+      <span class="site-loader__progress"></span>
+    </div>
+  </div>
+  <script src="../loader.js"></script>
 <!-- NAV -->
 <nav class="site-nav" id="navbar">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
   <img src="../logo.png" alt="Staafin" style="height: 60px; width: auto; display: block;">
 </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/features/">Features</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/" class="active">Contact</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../features/index.html">Features</a></li>
+      <li><a href="../pricing/index.html">Pricing</a></li>
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../contact/index.html" class="active">Contact</a></li>
     </ul>
     <div class="nav-right">
       <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
@@ -119,11 +120,11 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="toggleNav()">Home</a>
-  <a href="/features/" onclick="toggleNav()">Features</a>
-  <a href="/pricing/" onclick="toggleNav()">Pricing</a>
-  <a href="/about/" onclick="toggleNav()">About</a>
-  <a href="/contact/" onclick="toggleNav()">Contact</a>
+  <a href="../index.html" onclick="toggleNav()">Home</a>
+  <a href="../features/index.html" onclick="toggleNav()">Features</a>
+  <a href="../pricing/index.html" onclick="toggleNav()">Pricing</a>
+  <a href="../about/index.html" onclick="toggleNav()">About</a>
+  <a href="../contact/index.html" onclick="toggleNav()">Contact</a>
   <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
 </div>
 
@@ -131,52 +132,53 @@
 <section class="page-hero">
   <div class="page-hero-label reveal">Contact Us</div>
   <h1 class="reveal d1">Get in touch</h1>
-  <p class="reveal d2">Whether you have a question about features, pricing, or anything else — our team is ready to answer within one business day.</p>
+  <p class="reveal d2">Tell us about your team, locations and current workforce process. We will help you decide whether Staafin is the right fit.</p>
 </section>
 
 <!-- CONTACT LAYOUT -->
 <div class="contact-layout">
   <!-- Info -->
   <div class="contact-info reveal">
-    <h2>Contact Information</h2>
+    <h2>How we can help</h2>
     <div class="info-item">
       <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
       <div>
-        <div class="info-label">Email us</div>
+        <div class="info-label">Email</div>
         <div class="info-value">connect@staafin.co.uk</div>
+        <div class="info-sub">For demos, pricing and product enquiries.</div>
       </div>
     </div>
     <div class="info-item">
-      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
       <div>
-        <div class="info-label">Company</div>
-        <div class="info-value">Elite Care and Support Ltd</div>
-        <div class="info-sub">Company No. 14303034 · Registered in England &amp; Wales</div>
+        <div class="info-label">Pricing</div>
+        <div class="info-value">Confirm the right plan</div>
+        <div class="info-sub">Share your user count and required modules.</div>
       </div>
     </div>
     <div class="info-item">
       <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
       <div>
-        <div class="info-label">Registered office</div>
-        <div class="info-value">The Work Place, Heighington Lane,<br/>Aycliffe Business Park, Newton Aycliffe,<br/>County Durham, DL5 6AH</div>
+        <div class="info-label">Location</div>
+        <div class="info-value">United Kingdom</div>
       </div>
     </div>
     <div class="info-item">
       <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
       <div>
-        <div class="info-label">Business hours</div>
-        <div class="info-value">Mon – Fri, 9:00am – 6:00pm GMT</div>
+        <div class="info-label">Typical response</div>
+        <div class="info-value">Within one business day</div>
       </div>
     </div>
     <div class="quick-box">
       <h4>Quick actions</h4>
-      <a href="https://staafin.com/app/" class="quick-link">
+      <a href="../pricing/index.html" class="quick-link">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Start your free 14-day trial
+        View pricing plans
       </a>
-      <a href="https://staafin.com/app/" class="quick-link">
+      <a href="../features/index.html" class="quick-link">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5L12.5 8 9 11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Log in to your account
+        Explore Staafin modules
       </a>
     </div>
   </div>
@@ -204,11 +206,10 @@
         <label>What can we help with? <span>*</span></label>
         <select name="topic" required>
           <option value="" disabled selected>Select a topic...</option>
-          <option>Product Demo</option>
+          <option>Product demo</option>
           <option>Pricing &amp; Plans</option>
-          <option>Technical Support</option>
-          <option>Enterprise Sales</option>
-          <option>Partnership</option>
+          <option>Enterprise requirements</option>
+          <option>Partnership enquiry</option>
           <option>Other</option>
         </select>
       </div>
@@ -224,35 +225,11 @@
   </div>
 </div>
 
-<!-- BOOK A WALKTHROUGH -->
-<style>
-  .booking-section{background:linear-gradient(135deg,#0F172A 0%,#1E1B4B 60%,#312E81 100%);padding:72px 24px;text-align:center;}
-  .booking-section h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:12px;}
-  .booking-section>p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:460px;margin:0 auto 28px;line-height:1.7;}
-  .booking-alt{font-size:13px;color:rgba(255,255,255,0.55);margin-top:16px;}
-  .booking-alt a{color:rgba(255,255,255,0.85);font-weight:600;}
-</style>
-<section class="booking-section">
-  <h2 class="reveal">Book a walkthrough</h2>
-  <p class="reveal d1">Prefer a guided tour? Book a 30-minute walkthrough and we'll show you Staafin using your own branches, shift patterns and leave policies as the example.</p>
-  <a href="mailto:connect@staafin.co.uk?subject=Book a Staafin walkthrough" id="bookingLink" class="btn-outline-white reveal d2">Book a time that suits you</a>
-  <p class="booking-alt reveal d3">or email <a href="mailto:connect@staafin.co.uk">connect@staafin.co.uk</a> — we respond within one business day</p>
-</section>
-<script>
-  // To enable online booking, paste your Calendly (or similar) scheduling link below, e.g.:
-  // const BOOKING_URL = 'https://calendly.com/your-team/staafin-walkthrough';
-  const BOOKING_URL = '';
-  if (BOOKING_URL) {
-    const link = document.getElementById('bookingLink');
-    link.href = BOOKING_URL; link.target = '_blank'; link.rel = 'noopener';
-  }
-</script>
-
 <!-- BOTTOM CTA -->
-<section class="contact-cta">
-  <h2 class="reveal">Prefer to dive straight in?</h2>
-  <p class="reveal d1">Start your free 14-day trial — no credit card needed. Upgrade when you're ready.</p>
-  <a href="https://staafin.com/app/" class="btn-outline-white reveal d2">Start Free Trial</a>
+<section class="contact-cta brand-cta">
+  <h2 class="reveal">Need a tailored setup?</h2>
+  <p class="reveal d1">Tell us about your current HR process and the modules you want to review first.</p>
+  <a href="../pricing/index.html" class="btn-primary reveal d2">View pricing</a>
 </section>
 
 <!-- FOOTER -->
@@ -263,15 +240,22 @@
   <div class="nav-logo">
     <img src="../logo.png" alt="Staafin" style="height: 44px; width: auto; display: block;">
   </div>
-  <p>The modern HRMS for growing organisations, built by Elite Care and Support Ltd — a UK care and software company. Simplify, centralise, and empower your workforce.</p>
+  <p>Workforce management software for employee records, leave, attendance, shifts, assets, timesheets and reporting.</p>
 </div>
-      <div class="footer-col"><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Book a demo</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="../features/index.html">Features</a></li><li><a href="../pricing/index.html">Pricing</a></li><li><a href="../contact/index.html">Book a demo</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Contact</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy/index.html">Privacy</a></li>
+          <li><a href="../terms/index.html">Terms</a></li>
+          <li><a href="../security/index.html">Security</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>
-      <div class="footer-bottom-links"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact Us</a></div>
+      <div class="footer-bottom-links"><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a><a href="../contact/index.html">Contact Us</a></div>
     </div>
   </div>
 </footer>
@@ -281,6 +265,11 @@
   const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 2px 20px rgba(0,0,0,0.25)':'none';});
+
+  // To receive enquiries directly without the visitor's email app:
+  // 1. Create a free form at https://formspree.io
+  // 2. Replace FORMSPREE_ENDPOINT below with your endpoint (e.g. 'https://formspree.io/f/abcdwxyz')
+  const FORMSPREE_ENDPOINT = '';
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -309,15 +298,10 @@
       // Fallback: open the visitor's email app with the enquiry pre-filled to connect@staafin.co.uk
       const data = new FormData(form);
       const body = `Name: ${data.get('name')}%0AEmail: ${data.get('email')}%0ACompany: ${data.get('company') || 'Not provided'}%0ATopic: ${data.get('topic')}%0A%0AMessage:%0A${data.get('message')}`;
-      window.location.href = `mailto:connect@staafin.co.uk?subject=${encodeURIComponent('Staafin Enquiry: ' + data.get('topic') + ' — ' + data.get('name'))}&body=${body}`;
+      window.location.href = `mailto:connect@staafin.co.uk?subject=${encodeURIComponent('Staafin Enquiry: ' + data.get('topic') + ' - ' + data.get('name'))}&body=${body}`;
       fallbackMsg.style.display = 'block';
     }
   }
-
-  // To receive enquiries directly without the visitor's email app:
-  // 1. Create a free form at https://formspree.io
-  // 2. Replace FORMSPREE_ENDPOINT below with your endpoint (e.g. 'https://formspree.io/f/abcdwxyz')
-  const FORMSPREE_ENDPOINT = '';
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4749747f8ee3d75',t:'MTc5MTQ1NjY5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

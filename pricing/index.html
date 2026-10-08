@@ -2,20 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pricing — Staafin</title>
+  <title>Pricing | Staafin</title>
+  <meta name="description" content="View Staafin pricing plans for UK workforce teams, including Essential, Professional, Premium and Enterprise options."/>
+  <link rel="icon" type="image/png" href="../favicon.png"/>
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../styles.css"/>
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-  <link rel="canonical" href="https://staafin.co.uk/pricing/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Staafin"/>
-  <meta property="og:title" content="Pricing — Staafin"/>
-  <meta property="og:description" content="Simple, transparent pricing. Start free with a 14-day trial, upgrade as you grow."/>
-  <meta property="og:url" content="https://staafin.co.uk/pricing/"/>
-  <meta property="og:image" content="https://staafin.co.uk/og-image.jpg"/>
-  <meta name="twitter:card" content="summary_large_image"/>
   <style>
     .page-hero {
       background: var(--nav-bg);
@@ -36,30 +29,8 @@
     .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto; line-height: 1.78; }
     .page-hero-label{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.07);padding:5px 14px;border-radius:100px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.1);}
 
-    /* Billing toggle */
-    .billing-toggle-wrap { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 40px 0 0; }
-    .toggle-label { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); }
-    .toggle-label.active { color: #fff; font-weight: 600; }
-    .toggle-track {
-      width: 48px; height: 26px; border-radius: 100px; background: rgba(255,255,255,0.15);
-      cursor: pointer; position: relative; transition: background .25s;
-    }
-    .toggle-track.annual { background: var(--green); }
-    .toggle-thumb {
-      position: absolute; top: 3px; left: 3px;
-      width: 20px; height: 20px; border-radius: 50%; background: #fff;
-      transition: transform .25s; box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    }
-    .toggle-track.annual .toggle-thumb { transform: translateX(22px); }
-    .save-badge {
-      background: var(--green); color: #fff; font-size: 11px; font-weight: 700;
-      padding: 3px 9px; border-radius: 100px; opacity: 0; transform: scale(0.8);
-      transition: opacity .2s, transform .2s;
-    }
-    .save-badge.visible { opacity: 1; transform: scale(1); }
-
     .pricing-section { padding: 80px 24px; background: var(--bg-2); }
-    .pricing-grid { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .pricing-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
 
     .plan-card {
       background: #fff; border: 1.5px solid var(--border); border-radius: 18px;
@@ -73,12 +44,12 @@
       background: var(--purple); color: #fff; font-size: 11px; font-weight: 700;
       letter-spacing: 0.5px; padding: 4px 16px; border-radius: 100px; white-space: nowrap;
     }
-    .plan-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+    .plan-header { min-height: 86px; margin-bottom: 20px; }
     .plan-name { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
     .plan-desc { font-size: 13.5px; color: var(--muted); }
     .plan-price { display: flex; align-items: baseline; gap: 3px; margin-bottom: 28px; }
     .plan-currency { font-size: 1.4rem; font-weight: 800; color: var(--text); align-self: flex-start; margin-top: 8px; }
-    .plan-amount { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); line-height: 1; }
+    .plan-amount { font-size: 3.1rem; font-weight: 900; letter-spacing: -0.04em; color: var(--text); line-height: 1; }
     .plan-period { font-size: 13px; color: var(--muted); align-self: flex-end; margin-bottom: 4px; padding-left: 2px; }
     .plan-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
     .plan-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2); }
@@ -108,6 +79,15 @@
     .enterprise-card:hover { border-color: rgba(255,255,255,0.2); }
     .enterprise-card .plan-btn.outline { border-color: rgba(255,255,255,0.25); color: #fff; }
     .enterprise-card .plan-btn.outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .pricing-note { max-width: 1180px; margin: 22px auto 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .matrix-section { padding: 80px 24px; background: #fff; }
+    .matrix-wrap { max-width: 1180px; margin: 0 auto; border: 1px solid var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .matrix-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .matrix-table th { background: #F8FAFC; color: var(--text); text-align: left; padding: 16px; font-size: 13px; border-bottom: 1px solid var(--border); }
+    .matrix-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+    .matrix-table tr:last-child td { border-bottom: none; }
+    .yes { color: var(--green-d); font-weight: 800; }
+    .no { color: var(--muted-2); }
 
     /* FAQ */
     .faq-section { padding: 80px 24px; background: #fff; }
@@ -126,11 +106,17 @@
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
     .faq-answer p { font-size: 14.5px; color: var(--muted); line-height: 1.75; padding-bottom: 20px; }
 
-    .custom-cta { background: var(--grad-cta); padding: 80px 24px; text-align: center; }
-    .custom-cta h2 { font-size: clamp(1.8rem, 3vw, 2.75rem); font-weight: 900; color: #fff; letter-spacing: -0.035em; margin-bottom: 14px; }
-    .custom-cta p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 440px; margin: 0 auto 32px; line-height: 1.75; }
+    .custom-cta { padding: 80px 24px; text-align: center; }
+    .custom-cta h2 { font-size: clamp(1.8rem, 3vw, 2.75rem); font-weight: 900; color: var(--text); letter-spacing: -0.035em; margin-bottom: 14px; }
+    .custom-cta p { font-size: 1rem; color: var(--muted); max-width: 440px; margin: 0 auto 32px; line-height: 1.75; }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1040px) {
+      .pricing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .matrix-wrap { overflow-x: auto; }
+      .matrix-table { min-width: 760px; }
       .plan-amount { font-size: 2.8rem; }
       .pricing-section { padding: 56px 16px; }
       .plan-card { padding: 28px 22px; }
@@ -138,19 +124,27 @@
   </style>
 </head>
 <body>
+  <div class="site-loader" id="siteLoader" role="status" aria-label="Loading Staafin">
+    <div class="site-loader__centre">
+      <span class="site-loader__ring"></span><span class="site-loader__ring"></span><span class="site-loader__ring"></span>
+      <img class="site-loader__symbol" src="../logo-symbol.png" alt=""/>
+      <span class="site-loader__progress"></span>
+    </div>
+  </div>
+  <script src="../loader.js"></script>
 
 <!-- NAV -->
 <nav class="site-nav" id="navbar">
   <div class="nav-inner">
-   <a href="/" class="nav-logo">
+   <a href="../index.html" class="nav-logo">
   <img src="../logo.png" alt="Staafin" style="height: 60px; width: auto; display: block;">
 </a>
     <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/features/">Features</a></li>
-      <li><a href="/pricing/" class="active">Pricing</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../features/index.html">Features</a></li>
+      <li><a href="../pricing/index.html" class="active">Pricing</a></li>
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../contact/index.html">Contact</a></li>
     </ul>
     <div class="nav-right">
       <a href="https://staafin.com/app/" class="btn-nav-login">Log in</a>
@@ -161,103 +155,84 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="toggleNav()">Home</a>
-  <a href="/features/" onclick="toggleNav()">Features</a>
-  <a href="/pricing/" onclick="toggleNav()">Pricing</a>
-  <a href="/about/" onclick="toggleNav()">About</a>
-  <a href="/contact/" onclick="toggleNav()">Contact</a>
+  <a href="../index.html" onclick="toggleNav()">Home</a>
+  <a href="../features/index.html" onclick="toggleNav()">Features</a>
+  <a href="../pricing/index.html" onclick="toggleNav()">Pricing</a>
+  <a href="../about/index.html" onclick="toggleNav()">About</a>
+  <a href="../contact/index.html" onclick="toggleNav()">Contact</a>
   <a href="https://staafin.com/app/" class="mob-cta" onclick="toggleNav()">Log in to Staafin</a>
 </div>
 
 <!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-label reveal">Pricing</div>
-  <h1 class="reveal d1">Simple, transparent pricing</h1>
-  <p class="reveal d2">Scale your HR operations without scaling your costs. Start free, upgrade as you grow.</p>
-  <!-- Billing toggle -->
-  <div class="billing-toggle-wrap reveal d2">
-    <span class="toggle-label active" id="lblMonthly">Monthly</span>
-    <div class="toggle-track" id="billingToggle" onclick="toggleBilling()">
-      <div class="toggle-thumb"></div>
-    </div>
-    <span class="toggle-label" id="lblAnnual">Annual</span>
-    <span class="save-badge" id="saveBadge">Save 20%</span>
-  </div>
+  <h1 class="reveal d1">Clear plans for UK workforce teams</h1>
+  <p class="reveal d2">Choose the plan that matches your current team size and operating needs. Upgrade when your process needs more control.</p>
 </section>
 
 <!-- PRICING -->
 <section class="pricing-section">
   <div class="pricing-grid">
 
-    <!-- Free -->
-    <div class="plan-card reveal">
-      <div class="plan-header">
-        <div>
-          <div class="plan-name">Free Trial</div>
-          <div class="plan-desc">14-day full access. No credit card required.</div>
-        </div>
-      </div>
-      <div class="plan-price">
-        <span class="plan-currency">£</span>
-        <span class="plan-amount">0</span>
-      </div>
-      <ul class="plan-features">
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 50 employees</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic HR profiles</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Leave management</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Standard reports</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Email support</li>
-      </ul>
-      <a href="https://staafin.com/app/" class="plan-btn outline">Start Free Trial</a>
-    </div>
-
-    <!-- Starter -->
+    <!-- Essential -->
     <div class="plan-card reveal d1">
       <div class="plan-header">
-        <div>
-          <div class="plan-name">Starter</div>
-          <div class="plan-desc">Essential HR tools for small teams ready to grow.</div>
-        </div>
+        <div class="plan-name">Essential</div>
+        <div class="plan-desc">Core workforce management for smaller teams.</div>
       </div>
       <div class="plan-price">
         <span class="plan-currency">£</span>
-        <span class="plan-amount price-val" data-monthly="4" data-annual="3">4</span>
-        <span class="plan-period">/user/month</span>
+        <span class="plan-amount">79</span>
+        <span class="plan-period">/month</span>
       </div>
       <ul class="plan-features">
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 100 employees</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Full employee profiles</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Attendance tracking</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Time-off management</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Basic asset tracking</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Priority email support</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 25 users</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Employee, leave and attendance management</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Manual shift allocation and shift creation</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Timesheets and mobile app</li>
       </ul>
-      <a href="https://staafin.com/app/" class="plan-btn outline">Choose Starter</a>
+      <a href="../contact/index.html" class="plan-btn outline">Discuss Essential</a>
     </div>
 
-    <!-- Growth (featured) -->
+    <!-- Professional -->
     <div class="plan-card featured reveal d2">
       <div class="badge-popular">Most Popular</div>
       <div class="plan-header">
-        <div>
-          <div class="plan-name">Growth</div>
-          <div class="plan-desc">Advanced features to manage and scale your workforce.</div>
-        </div>
+        <div class="plan-name">Professional</div>
+        <div class="plan-desc">More control for teams with documents, assets and reporting needs.</div>
       </div>
       <div class="plan-price">
         <span class="plan-currency">£</span>
-        <span class="plan-amount price-val" data-monthly="8" data-annual="6">8</span>
-        <span class="plan-period">/user/month</span>
+        <span class="plan-amount">149</span>
+        <span class="plan-period">/month</span>
       </div>
       <ul class="plan-features">
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Unlimited employees</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Hiring &amp; Recruitment (ATS)</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Shift &amp; Timesheet management</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Advanced reporting &amp; analytics</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom approval workflows</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>24/7 priority support</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 50 users</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in Essential</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Document management and announcements</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Smart shift allocation, assets and dashboards</li>
       </ul>
-      <a href="https://staafin.com/app/" class="plan-btn solid">Choose Growth</a>
+      <a href="../contact/index.html" class="plan-btn solid">Discuss Professional</a>
+    </div>
+
+    <!-- Premium -->
+    <div class="plan-card reveal d3">
+      <div class="plan-header">
+        <div class="plan-name">Premium</div>
+        <div class="plan-desc">Advanced workforce controls for larger operations.</div>
+      </div>
+      <div class="plan-price">
+        <span class="plan-currency">£</span>
+        <span class="plan-amount">249</span>
+        <span class="plan-period">/month</span>
+      </div>
+      <ul class="plan-features">
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Up to 100 users</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in Professional</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Unlimited smart shift allocation</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Roles, permissions, ATS and tags</li>
+      </ul>
+      <a href="../contact/index.html" class="plan-btn outline">Discuss Premium</a>
     </div>
 
     <!-- Enterprise -->
@@ -265,23 +240,43 @@
       <div class="plan-header">
         <div>
           <div class="plan-name">Enterprise</div>
-          <div class="plan-desc">Tailored solutions for large organisations.</div>
+          <div class="plan-desc">For larger teams that need integrations, custom features or dedicated support.</div>
         </div>
       </div>
       <div class="plan-price">
         <span class="plan-amount" style="font-size:2.5rem;">Custom</span>
       </div>
       <ul class="plan-features">
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in Growth</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Unlimited users</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Everything in Premium</li>
         <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Dedicated Customer Success Manager</li>
         <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom integrations &amp; API access</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>SAML Single Sign-On (SSO)</li>
-        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Audit logs &amp; SLA guarantees</li>
+        <li><div class="pf-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.2 2.2L8 3" stroke="#22C55E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Custom feature development</li>
       </ul>
-      <a href="/contact/" class="plan-btn outline">Contact Sales</a>
+      <a href="../contact/index.html" class="plan-btn outline">Contact Sales</a>
     </div>
   </div>
-  <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:24px;">All prices are shown in GBP and exclude VAT, which will be added at the applicable rate where charged.</p>
+  <p class="pricing-note reveal d4">Monthly pricing shown in GBP and excluding VAT, which is added at the applicable rate. Plans can be upgraded or downgraded at any time; changes take effect from your next billing cycle.</p>
+</section>
+
+<section class="matrix-section">
+  <div class="section-header">
+    <span class="section-label reveal">Feature matrix</span>
+    <h2 class="reveal d1">Compare plans at a glance</h2>
+  </div>
+  <div class="matrix-wrap reveal d2">
+    <table class="matrix-table">
+      <thead><tr><th>Feature</th><th>Essential</th><th>Professional</th><th>Premium</th><th>Enterprise</th></tr></thead>
+      <tbody>
+        <tr><td>Employee, leave, attendance, shifts and timesheets</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Document management and announcements</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Smart shift allocation</td><td class="no">No</td><td class="yes">10 per day</td><td class="yes">Unlimited</td><td class="yes">Unlimited</td></tr>
+        <tr><td>Asset management and dashboards</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Roles, permissions, ATS and tags</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>Custom integrations and custom feature development</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -300,40 +295,40 @@
     </div>
     <div class="faq-item reveal d1">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Is there a free trial?
+        Do you offer a product demo?
         <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       </button>
-      <div class="faq-answer"><p>Absolutely. Every new account gets a 14-day free trial with full access to all features — no credit card required to start.</p></div>
+      <div class="faq-answer"><p>Yes. You can request a guided demo so the Staafin team can walk through the modules that matter most to your organisation.</p></div>
     </div>
     <div class="faq-item reveal d2">
       <button class="faq-question" onclick="toggleFaq(this)">
-        How does per-user pricing work?
+        Can I move between plans?
         <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       </button>
-      <div class="faq-answer"><p>You pay only for the active employees in your organisation. Add or remove users at any time; your bill adjusts pro-rata.</p></div>
+      <div class="faq-answer"><p>Yes. The plans are structured so teams can start with core workforce management and move up when they need more automation, reporting or integrations.</p></div>
     </div>
     <div class="faq-item reveal d3">
       <button class="faq-question" onclick="toggleFaq(this)">
         What support is included?
         <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       </button>
-      <div class="faq-answer"><p>All plans include email support. Growth plan includes priority 24/7 support. Enterprise customers get a dedicated Customer Success Manager.</p></div>
+      <div class="faq-answer"><p>Support levels depend on the plan and onboarding requirements. Enterprise customers can discuss dedicated support as part of their agreement.</p></div>
     </div>
     <div class="faq-item reveal d4">
       <button class="faq-question" onclick="toggleFaq(this)">
         Is my data secure?
         <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
       </button>
-      <div class="faq-answer"><p>Staafin is built with UK GDPR principles in mind: role-based access controls, encrypted connections and structured employee records. Elite Care and Support Ltd's ICO registration details are available on request. Full security and data-processing documentation is available on request.</p></div>
+      <div class="faq-answer"><p>Staafin is designed for UK workforce data, with role-based access and GDPR-aware handling. We can provide more detail during procurement or onboarding.</p></div>
     </div>
   </div>
 </section>
 
 <!-- CUSTOM CTA -->
-<section class="custom-cta">
+<section class="custom-cta brand-cta">
   <h2 class="reveal">Have custom requirements?</h2>
-  <p class="reveal d1">We work with enterprise organisations to deliver tailored HRMS solutions. Let's discuss your specific needs.</p>
-  <a href="/contact/" class="btn-outline-white reveal d2">Contact Our Sales Team</a>
+  <p class="reveal d1">We work with organisations that need tailored workforce workflows, integrations or dedicated support.</p>
+  <a href="../contact/index.html" class="btn-primary reveal d2">Contact Our Sales Team</a>
 </section>
 
 <!-- FOOTER -->
@@ -344,15 +339,22 @@
   <div class="nav-logo">
     <img src="../logo.png" alt="Staafin" style="height: 44px; width: auto; display: block;">
   </div>
-  <p>The modern HRMS for growing organisations, built by Elite Care and Support Ltd — a UK care and software company. Simplify, centralise, and empower your workforce.</p>
+  <p>Workforce management software for employee records, leave, attendance, shifts, assets, timesheets and reporting.</p>
 </div>
-      <div class="footer-col"><h4>Product</h4><ul><li><a href="/features/">Features</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/contact/">Book a demo</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About Us</a></li><li><a href="/contact/">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Use</a></li><li><a href="/security/">Security</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="../features/index.html">Features</a></li><li><a href="../pricing/index.html">Pricing</a></li><li><a href="../contact/index.html">Book a demo</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="../about/index.html">About Us</a></li><li><a href="../contact/index.html">Contact</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy/index.html">Privacy</a></li>
+          <li><a href="../terms/index.html">Terms</a></li>
+          <li><a href="../security/index.html">Security</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Staafin. All rights reserved.<small style="display:block;margin-top:6px;font-size:11px;line-height:1.6;font-weight:400;opacity:.75;">Staafin is a product of Elite Care and Support Ltd · Company No. 14303034 · Registered office: The Work Place, Heighington Lane, Aycliffe Business Park, Newton Aycliffe, County Durham, DL5 6AH · Registered in England &amp; Wales</small></span>
-      <div class="footer-bottom-links"><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/contact/">Contact Us</a></div>
+      <div class="footer-bottom-links"><a href="../privacy/index.html">Privacy</a><a href="../terms/index.html">Terms</a><a href="../contact/index.html">Contact Us</a></div>
     </div>
   </div>
 </footer>
@@ -362,26 +364,6 @@
   const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.08});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   window.addEventListener('scroll', () => { document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,0.3)' : 'none'; });
-
-  // Billing toggle
-  let isAnnual = false;
-  function toggleBilling() {
-    isAnnual = !isAnnual;
-    const track = document.getElementById('billingToggle');
-    const badge = document.getElementById('saveBadge');
-    const lblM = document.getElementById('lblMonthly');
-    const lblA = document.getElementById('lblAnnual');
-    track.classList.toggle('annual', isAnnual);
-    badge.classList.toggle('visible', isAnnual);
-    lblM.classList.toggle('active', !isAnnual);
-    lblA.classList.toggle('active', isAnnual);
-    document.querySelectorAll('.price-val').forEach(el => {
-      const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
-      el.style.transition = 'opacity .2s';
-      el.style.opacity = '0';
-      setTimeout(() => { el.textContent = val; el.style.opacity = '1'; }, 200);
-    });
-  }
 
   // FAQ accordion
   function toggleFaq(btn) {
@@ -399,5 +381,5 @@
     }
   }
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a474974998c72fcd',t:'MTc5MTQ1NjY5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
